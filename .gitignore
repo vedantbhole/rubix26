@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 # Ignore 3D model files (too large for GitHub)
 *.glb
+
+public/models/*
