@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { 
-  Leaf, ArrowRight, Sparkles, ChevronDown, 
+import {
+  Leaf, ArrowRight, Sparkles, ChevronDown,
   BookOpen, Map, Search, Users, Award, Globe
 } from 'lucide-react';
 import ScrollPlantAnimation from '../components/ScrollPlantAnimation';
@@ -12,7 +12,7 @@ import { plants, healthThemes, ayushSystems } from '../data/plants';
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const heroRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -46,19 +46,19 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Full-Screen Scroll Animation */}
-      <section 
+      <section
         ref={heroRef}
         className="relative h-[300vh]"
       >
         {/* Fixed container for scroll animation - FULL SCREEN */}
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
+        <div className="sticky top-0 h-[100dvh] w-full overflow-hidden">
           {/* Full-screen plant animation as background */}
           <div className="absolute inset-0 z-0">
             <ScrollPlantAnimation progress={scrollProgress} />
           </div>
 
           {/* Dark overlay for better text readability */}
-          <div 
+          <div
             className="absolute inset-0 z-10 pointer-events-none"
             style={{
               background: 'linear-gradient(to right, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.4) 50%, rgba(10, 10, 10, 0.2) 100%)'
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
 
           {/* Text content overlay */}
-          <motion.div 
+          <motion.div
             className="relative z-30 h-full flex flex-col justify-center px-8 lg:px-16 max-w-2xl"
             style={{ opacity, scale }}
           >
@@ -100,9 +100,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 w-fit"
-              style={{ 
-                backgroundColor: 'rgba(34, 197, 94, 0.1)', 
-                border: '1px solid rgba(34, 197, 94, 0.3)' 
+              style={{
+                backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                border: '1px solid rgba(34, 197, 94, 0.3)'
               }}
             >
               <Sparkles className="w-4 h-4" style={{ color: '#4ade80' }} />
@@ -129,7 +129,7 @@ export default function Home() {
               className="text-lg lg:text-xl leading-relaxed mb-8"
               style={{ color: '#9ca3af' }}
             >
-              Explore the ancient wisdom of medicinal plants used in AYUSH systems. 
+              Explore the ancient wisdom of medicinal plants used in AYUSH systems.
               An immersive digital experience for students, practitioners, and curious minds.
             </motion.p>
 
@@ -255,7 +255,7 @@ export default function Home() {
                 Discover some of the most powerful medicinal plants in traditional medicine
               </p>
             </div>
-            <Link 
+            <Link
               to="/explorer"
               className="btn-secondary flex items-center gap-2 whitespace-nowrap"
             >
@@ -348,7 +348,7 @@ export default function Home() {
               <span className="block text-gradient mt-2">Digital Compendium?</span>
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              Search and filter plants by disease category, AYUSH discipline, 
+              Search and filter plants by disease category, AYUSH discipline,
               region, and more. Build your personal study lists and notes.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
