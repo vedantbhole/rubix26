@@ -1,4 +1,6 @@
 import express from 'express';
+import fs from 'fs/promises';
+import path from 'path';
 import {
   generatePlantImage,
   generatePlantAudio,
@@ -101,7 +103,7 @@ router.post('/audio/:plantName', async (req, res, next) => {
     const { plantName } = req.params;
     const {
       voiceName = 'Kore',
-      saveToAppwrite = false,
+      saveToAppwrite = true, // Default to TRUE to ensure caching
       customText = null
     } = req.body;
 
@@ -113,8 +115,53 @@ router.post('/audio/:plantName', async (req, res, next) => {
     if (!audioText) {
       try {
         console.log(`🔍 Fetching data for audio generation: ${plantName}`);
+
+        // Check DB first
         const result = await getPlantByName(plantName);
         plantData = result.data;
+
+        // CHECK FOR EXISTING AUDIO (Cache Hit)
+        // If we have audio in the database, return it directly
+        if (plantData.media && plantData.media.audio && plantData.media.audio.length > 0) {
+          console.log(`🔊 Audio already exists for ${plantName}, returning from cache.`);
+          const existingAudio = plantData.media.audio[plantData.media.audio.length - 1]; // Get latest
+
+          // SYNC LOCAL FILE: Check if file exists locally, if not download from Appwrite
+          try {
+            const scriptDir = path.join(process.cwd(), 'src', 'scripts');
+            const filename = `${plantName.toLowerCase().replace(/\s+/g, '-')}-narration.mp3`;
+            const localFilePath = path.join(scriptDir, filename);
+
+            try {
+              await fs.access(localFilePath);
+              console.log(`✅ Local audio file exists: ${localFilePath}`);
+            } catch (e) {
+              // File doesn't exist locally, download it
+              console.log(`📥 Local audio missing, downloading from Appwrite...`);
+              if (BUCKET_ID && existingAudio.fileId) {
+                const fileBuffer = await storage.getFileDownload(BUCKET_ID, existingAudio.fileId);
+                await fs.writeFile(localFilePath, Buffer.from(fileBuffer));
+                console.log(`💾 Downloaded and saved audio to: ${localFilePath}`);
+              }
+            }
+          } catch (syncError) {
+            console.error('⚠️ Failed to sync local audio file:', syncError);
+            // Verify we continue even if sync fails
+          }
+
+          return res.json({
+            success: true,
+            message: 'Audio retrieved from cache',
+            data: {
+              plantName,
+              fileId: existingAudio.fileId,
+              url: existingAudio.url,
+              transcript: plantData.explanations?.audioTranscript || customText || '',
+              voiceName,
+              cached: true
+            }
+          });
+        }
 
         // Generate script from the fetched/generated plant data
         audioText = await generateAudioScript(plantData);
@@ -130,6 +177,7 @@ router.post('/audio/:plantName', async (req, res, next) => {
 
     // 3. Optionally save to Appwrite
     if (saveToAppwrite && BUCKET_ID) {
+      console.log(`💾 Attempting to save audio to Appwrite (Bucket: ${BUCKET_ID})`);
       try {
         const inputFile = InputFile.fromBuffer(
           audioBuffer,
@@ -143,9 +191,11 @@ router.post('/audio/:plantName', async (req, res, next) => {
         );
 
         const fileUrl = getFilePreviewUrl(uploadResult.$id);
+        console.log(`✅ Audio uploaded to Appwrite: ${fileUrl}`);
 
         // Associate with plant if we have plant data
         if (plantData && plantData.name) {
+          console.log(`🔗 Linking audio to plant ${plantName} in database...`);
           await addMediaToPlant(plantName, {
             type: 'audio',
             fileId: uploadResult.$id,
@@ -153,12 +203,15 @@ router.post('/audio/:plantName', async (req, res, next) => {
             caption: 'AI-generated audio narration',
             mimeType: 'audio/mpeg'
           });
+          console.log(`✅ Database updated with audio URL.`);
 
-          // Also save the transcript if we have plant object
+          // Also save the transcript if we have plant object (this part is fine)
           if (!plantData.explanations) {
             plantData.explanations = {};
           }
           plantData.explanations.audioTranscript = audioText;
+        } else {
+          console.warn(`⚠️ Could not link audio to plant: plantData.name is missing.`);
         }
 
         return res.json({
