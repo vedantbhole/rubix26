@@ -9,6 +9,7 @@ import PlantProfile from './pages/PlantProfile';
 import Compendium from './pages/Compendium';
 import ThematicTours from './pages/ThematicTours';
 import Bookmarks from './pages/Bookmarks';
+import GardenTour from './pages/GardenTour';
 import './index.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/tour" element={<GardenTour />} />
                 <Route path="/explorer" element={<PlantExplorer />} />
                 <Route path="/plant/:id" element={<PlantProfile />} />
                 <Route path="/compendium" element={<Compendium />} />
