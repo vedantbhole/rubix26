@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF, CameraControls } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
+import SelectionRing from './SelectionRing';
 
 const PLANT_NAMES = [
     'aloevera',
@@ -17,17 +18,20 @@ const PLANT_NAMES = [
 // Custom offsets for specific plants
 // Default is [1, 0.8, 1]
 const PLANT_CONFIG = {
+    aloevera: { ringYOffset: 0.08 },
     basil: { offset: [1, 0.8, -1] }, // View from the left/right flip
-    lavender: { offset: [-1, 0.8, -1] },
+    lavender: { offset: [-1, 0.8, -1], ringYOffset: 0.01 },
     neem: { offset: [1, 0.8, 1], zoomMultiplier: 1.3 }, // Zoom out for trees
-    peepal: { offset: [-0.46, 0.57, 0.68], zoomMultiplier: 1, targetOffset: [0, 0.19, 0] }, // Lift focus up by 2 units
+    peepal: { ringYOffset: 0.5, offset: [-0.46, 0.57, 0.68], zoomMultiplier: 1, targetOffset: [0, 0.19, 0] }, // Lift focus up by 2 units
     tulsi: { targetOffset: [0, 0.05, 0] },
+    neem: { ringYOffset: 0.1 },
 };
 
 export default function GardenModel({ currentPlant, onPlantsLoaded }) {
     const { scene } = useGLTF('/models/varun_ka_garden.glb');
     const cameraControlsRef = useRef();
     const [plantNodes, setPlantNodes] = useState({});
+    const [ringProps, setRingProps] = useState(null); // { position, radius }
     const { camera } = useThree();
 
     // Find the plant nodes in the scene
@@ -53,7 +57,7 @@ export default function GardenModel({ currentPlant, onPlantsLoaded }) {
         }
     }, [scene, onPlantsLoaded]);
 
-    // Handle camera transitions
+    // Handle camera transitions AND ring position
     useEffect(() => {
         if (cameraControlsRef.current && currentPlant && plantNodes[currentPlant]) {
             const targetNode = plantNodes[currentPlant];
@@ -79,6 +83,19 @@ export default function GardenModel({ currentPlant, onPlantsLoaded }) {
                 // Determine offset and zoom based on plant config
                 // Default: [1, 0.8, 1]
                 const config = PLANT_CONFIG[currentPlant] || {};
+
+                // Update Ring Props using the box dimensions
+                // Position at the bottom of the box (ground level-ish)
+                // Add a small Y offset to avoid z-fighting
+                // Default offset is 0.05, can be overridden by config
+                const ringYOffset = config.ringYOffset !== undefined ? config.ringYOffset : 0.05;
+                const groundY = box.min.y + ringYOffset;
+
+                setRingProps({
+                    position: [center.x, groundY, center.z],
+                    radius: Math.max(size.x, size.z) / 2 + 0.05 // slightly larger than the plant width
+                });
+
                 const baseOffset = config.offset ? new THREE.Vector3(...config.offset) : new THREE.Vector3(1, 0.8, 1);
 
                 // Base distance logic (Tight zoom default)
@@ -136,12 +153,13 @@ export default function GardenModel({ currentPlant, onPlantsLoaded }) {
             const baseDist = (maxDim * 0.6 + 0.3);
             const approxMultiplier = dist / baseDist;
 
-            console.log(`
-[${currentPlant}] Calibration:
-Offset (Direction): [${dir.x.toFixed(2)}, ${dir.y.toFixed(2)}, ${dir.z.toFixed(2)}]
-Distance: ${dist.toFixed(2)}
-Approx ZoomMultiplier: ${approxMultiplier.toFixed(3)}
-`);
+            // Limit excessive logging
+            // console.log(`
+            // [${currentPlant}] Calibration:
+            // Offset (Direction): [${dir.x.toFixed(2)}, ${dir.y.toFixed(2)}, ${dir.z.toFixed(2)}]
+            // Distance: ${dist.toFixed(2)}
+            // Approx ZoomMultiplier: ${approxMultiplier.toFixed(3)}
+            // `);
         };
 
         // Use standard event listener
@@ -155,6 +173,15 @@ Approx ZoomMultiplier: ${approxMultiplier.toFixed(3)}
     return (
         <>
             <primitive object={scene} />
+
+            {/* Selection Ring */}
+            {ringProps && (
+                <SelectionRing
+                    position={ringProps.position}
+                    radius={ringProps.radius}
+                />
+            )}
+
             <CameraControls
                 ref={cameraControlsRef}
                 makeDefault
