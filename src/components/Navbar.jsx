@@ -1,11 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Leaf, Search, BookOpen, Map, Bookmark, Home } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const location = useLocation();
+
+  useEffect(() => {
+    // Only apply hidden logic on Home page
+    if (location.pathname === '/') {
+      const handleScroll = () => {
+        const threshold = window.innerHeight * 2; // Match the hero section height logic
+        if (window.scrollY < threshold) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      };
+
+      // Initial check
+      handleScroll();
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      // Always visible on other pages
+      setIsVisible(true);
+    }
+  }, [location.pathname]);
 
   const navLinks = [
     { path: '/', label: 'Home', icon: Home },
@@ -18,7 +42,10 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 glass transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
+    >
       <div className="section-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -43,11 +70,10 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
-                    isActive(link.path)
+                  className={`relative px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 ${isActive(link.path)
                       ? 'text-herb-400'
                       : 'text-gray-400 hover:text-white hover:bg-dark-600'
-                  }`}
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   {link.label}
@@ -97,11 +123,10 @@ export default function Navbar() {
                       key={link.path}
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
-                        isActive(link.path)
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${isActive(link.path)
                           ? 'bg-herb-500/10 text-herb-400 border border-herb-500/30'
                           : 'text-gray-400 hover:text-white hover:bg-dark-600'
-                      }`}
+                        }`}
                     >
                       <Icon className="w-5 h-5" />
                       {link.label}
