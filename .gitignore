@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Ignore 3D model files (too large for GitHub)
+*.glb
