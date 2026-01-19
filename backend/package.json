@@ -1,0 +1,24 @@
+{
+  "name": "rubix-backend",
+  "version": "1.0.0",
+  "description": "Plant information backend with MongoDB, Google AI, and Appwrite",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.37.0",
+    "appwrite": "^16.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0",
+    "morgan": "^1.10.1",
+    "multer": "^1.4.5-lts.1",
+    "node-appwrite": "^14.0.0",
+    "nodemon": "^3.1.11",
+    "wav": "^1.0.2"
+  }
+}

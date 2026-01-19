@@ -1,28 +1,158 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Map, ChevronRight, ChevronLeft, Play, Pause, 
+import {
+  Map, ChevronRight, ChevronLeft, Play, Pause,
   RotateCcw, Leaf, ArrowRight, Check
 } from 'lucide-react';
 import { plants, healthThemes } from '../data/plants';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export default function ThematicTours() {
   const [searchParams] = useSearchParams();
   const initialTheme = searchParams.get('theme');
-  
+
   const [selectedTour, setSelectedTour] = useState(
     initialTheme ? healthThemes.find(t => t.id === initialTheme) : null
   );
   const [currentPlantIndex, setCurrentPlantIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [completedPlants, setCompletedPlants] = useState([]);
+  const [clickedPlant, setClickedPlant] = useState(null);
 
-  const tourPlants = selectedTour 
+  // Three.js refs
+  const containerRef = useRef(null);
+  const sceneRef = useRef(null);
+  const cameraRef = useRef(null);
+  const rendererRef = useRef(null);
+  const controlsRef = useRef(null);
+  const clickablePlantsRef = useRef([]);
+
+  const tourPlants = selectedTour
     ? selectedTour.plants.map(id => plants.find(p => p.id === id)).filter(Boolean)
     : [];
 
   const currentPlant = tourPlants[currentPlantIndex];
+
+  // Three.js Scene Setup
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // Scene
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x1a1a2e);
+    sceneRef.current = scene;
+
+    // Camera
+    const camera = new THREE.PerspectiveCamera(
+      60,
+      containerRef.current.clientWidth / containerRef.current.clientHeight,
+      0.1,
+      1000
+    );
+    camera.position.set(5, 5, 5);
+    cameraRef.current = camera;
+
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    containerRef.current.appendChild(renderer.domElement);
+    rendererRef.current = renderer;
+
+    // Controls (rotate / zoom)
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controlsRef.current = controls;
+
+    // Lights
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(10, 10, 10);
+    scene.add(dirLight);
+
+    // Load GLB Model
+    const loader = new GLTFLoader();
+    loader.load(
+      '/src/3dmodel/gardfinal.glb',
+      (gltf) => {
+        const model = gltf.scene;
+        scene.add(model);
+
+        // Find clickable plant objects by name
+        model.traverse((obj) => {
+          if (obj.isObject3D && (obj.name.startsWith('basil') || obj.name.startsWith('neem'))) {
+            clickablePlantsRef.current.push(obj);
+          }
+        });
+      },
+      (progress) => {
+        console.log('Loading:', (progress.loaded / progress.total * 100) + '%');
+      },
+      (error) => {
+        console.error('Error loading model:', error);
+      }
+    );
+
+    // Animation loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Handle window resize
+    const handleResize = () => {
+      if (!containerRef.current) return;
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Handle click on plants
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    const handleClick = (event) => {
+      if (!containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(clickablePlantsRef.current, true);
+
+      if (intersects.length > 0) {
+        const clickedObject = intersects[0].object;
+        // Find parent plant object
+        let plantObject = clickedObject;
+        while (plantObject.parent && !clickablePlantsRef.current.includes(plantObject)) {
+          plantObject = plantObject.parent;
+        }
+        setClickedPlant(plantObject.name);
+        console.log('Clicked plant:', plantObject.name);
+      }
+    };
+    containerRef.current.addEventListener('click', handleClick);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (containerRef.current) {
+        containerRef.current.removeEventListener('click', handleClick);
+        containerRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+    };
+  }, []);
 
   // Auto-advance when playing
   useEffect(() => {
@@ -71,6 +201,23 @@ export default function ThematicTours() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="section-container">
+        {/* 3D Scene Container */}
+        <div
+          ref={containerRef}
+          className="w-full h-[500px] rounded-2xl overflow-hidden mb-8 border border-white/10"
+        />
+
+        {/* Clicked Plant Info */}
+        {clickedPlant && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-card p-4 mb-8 text-center"
+          >
+            <p className="text-herb-400">Selected Plant: <span className="text-white font-semibold">{clickedPlant}</span></p>
+          </motion.div>
+        )}
+
         {!selectedTour ? (
           /* Tour Selection View */
           <>
@@ -83,7 +230,7 @@ export default function ThematicTours() {
                 Guided <span className="text-gradient">Thematic Tours</span>
               </h1>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Explore medicinal plants organized by health themes. 
+                Explore medicinal plants organized by health themes.
                 Take a guided journey through nature's pharmacy.
               </p>
             </motion.div>
@@ -103,7 +250,7 @@ export default function ThematicTours() {
                     {theme.name}
                   </h2>
                   <p className="text-gray-400 mb-6">{theme.description}</p>
-                  
+
                   {/* Plant previews */}
                   <div className="flex -space-x-3 mb-4">
                     {theme.plants.slice(0, 4).map(plantId => {
@@ -167,13 +314,12 @@ export default function ThematicTours() {
                   <button
                     key={plant.id}
                     onClick={() => setCurrentPlantIndex(index)}
-                    className={`flex-1 h-2 rounded-full transition-all duration-300 ${
-                      index < currentPlantIndex
+                    className={`flex-1 h-2 rounded-full transition-all duration-300 ${index < currentPlantIndex
                         ? 'bg-herb-500'
                         : index === currentPlantIndex
-                        ? 'bg-herb-400 animate-pulse'
-                        : 'bg-dark-600'
-                    }`}
+                          ? 'bg-herb-400 animate-pulse'
+                          : 'bg-dark-600'
+                      }`}
                   />
                 ))}
               </div>
@@ -216,7 +362,7 @@ export default function ThematicTours() {
                   {/* Plant Info */}
                   <div className="glass-card p-8">
                     <p className="text-gray-300 text-lg leading-relaxed mb-6">{currentPlant.description}</p>
-                    
+
                     <h4 className="font-display font-semibold text-white mb-3">Key Benefits</h4>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {currentPlant.medicinalProperties.map((prop, i) => (
@@ -261,7 +407,7 @@ export default function ThematicTours() {
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              
+
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
                 className="p-4 rounded-full bg-herb-500 text-white hover:bg-herb-400 transition-colors"
