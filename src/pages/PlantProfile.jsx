@@ -1,31 +1,172 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft, Bookmark, BookmarkCheck, Share2,
-  Leaf, MapPin, AlertTriangle, Sparkles, Heart
+  Leaf, MapPin, AlertTriangle, Sparkles, Heart, Loader2,
+  Play, Pause, Volume2
 } from 'lucide-react';
-import { plants } from '../data/plants';
 import { useBookmarks } from '../hooks/useBookmarks';
 
 export default function PlantProfile() {
   const { id } = useParams();
-  const plant = plants.find(p => p.id === parseInt(id));
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [plant, setPlant] = useState(null);
+  const [relatedPlants, setRelatedPlants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (!plant) {
+  // Audio state
+  const [audioUrl, setAudioUrl] = useState(null);
+  const [audioLoading, setAudioLoading] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioElement, setAudioElement] = useState(null);
+
+  // Fetch plant data from API
+  useEffect(() => {
+    const fetchPlant = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await fetch(`http://localhost:5001/api/plants/${id}`);
+        const data = await response.json();
+
+        if (data.success && data.data) {
+          setPlant(data.data);
+
+          // Fetch related plants based on disease category
+          const allPlantsRes = await fetch('http://localhost:5001/api/plants');
+          const allPlantsData = await allPlantsRes.json();
+
+          if (allPlantsData.success) {
+            const diseaseCategories = data.data.disease_category || [];
+            const related = allPlantsData.data
+              .filter(p => {
+                const plantId = p.jsonId ?? p.id;
+                if (plantId === parseInt(id)) return false;
+                const pCategories = p.disease_category || [];
+                return diseaseCategories.some(d => pCategories.includes(d));
+              })
+              .slice(0, 3);
+            setRelatedPlants(related);
+          }
+        } else {
+          setError('Plant not found');
+        }
+      } catch (err) {
+        console.error('Error fetching plant:', err);
+        setError('Failed to load plant data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchPlant();
+    }
+  }, [id]);
+
+  // Handle audio playback
+  const handlePlayAudio = async () => {
+    // If already have audio, toggle play/pause
+    if (audioElement) {
+      if (isPlaying) {
+        audioElement.pause();
+        setIsPlaying(false);
+      } else {
+        audioElement.play();
+        setIsPlaying(true);
+      }
+      return;
+    }
+
+    // Fetch/generate audio
+    try {
+      setAudioLoading(true);
+      const plantName = plant.common_name || plant.name || '';
+
+      const response = await fetch(`http://localhost:5001/api/generate/audio/${encodeURIComponent(plantName)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ saveToAppwrite: true })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        let audioSrc;
+
+        if (data.data.fileId) {
+          // Use the backend proxy to serve audio from Appwrite (avoids 401 auth issues)
+          audioSrc = `http://localhost:5001/api/generate/audio/file/${data.data.fileId}`;
+        } else if (data.data.base64) {
+          // Use base64 data
+          audioSrc = `data:audio/mpeg;base64,${data.data.base64}`;
+        }
+
+        if (audioSrc) {
+          setAudioUrl(audioSrc);
+          const audio = new Audio(audioSrc);
+
+          audio.addEventListener('ended', () => {
+            setIsPlaying(false);
+          });
+
+          audio.addEventListener('error', (e) => {
+            console.error('Audio playback error:', e);
+            setIsPlaying(false);
+          });
+
+          setAudioElement(audio);
+          audio.play();
+          setIsPlaying(true);
+        }
+      } else {
+        console.error('Failed to generate audio:', data.message);
+      }
+    } catch (err) {
+      console.error('Error generating audio:', err);
+    } finally {
+      setAudioLoading(false);
+    }
+  };
+
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.src = '';
+      }
+    };
+  }, [audioElement]);
+
+  if (loading) {
     return (
       <div className="min-h-screen pt-24 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl text-white mb-4">Plant not found</h2>
+          <Loader2 className="w-12 h-12 text-herb-500 animate-spin mx-auto mb-4" />
+          <p className="text-gray-400">Loading plant details...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !plant) {
+    return (
+      <div className="min-h-screen pt-24 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl text-white mb-4">{error || 'Plant not found'}</h2>
           <Link to="/explorer" className="btn-primary">Back to Explorer</Link>
         </div>
       </div>
     );
   }
 
-  const bookmarked = isBookmarked(plant.id);
+  // Get numeric ID for bookmarking
+  const numericId = plant.jsonId ?? plant.id ?? parseInt(id);
+  const bookmarked = isBookmarked(numericId);
 
   // Normalize field names to support both old and new data formats
   const plantName = plant.common_name || plant.name || '';
@@ -62,14 +203,6 @@ export default function PlantProfile() {
   // Common names (old format)
   const commonNames = plant.commonNames || [];
 
-  // Find related plants
-  const relatedPlants = plants.filter(p => {
-    if (p.id === plant.id) return false;
-    // Check disease category match
-    const pCategories = p.disease_category || (p.category ? [p.category] : []);
-    return diseaseList.some(d => pCategories.includes(d));
-  }).slice(0, 3);
-
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="section-container">
@@ -104,7 +237,7 @@ export default function PlantProfile() {
                 {/* Action Buttons */}
                 <div className="absolute top-4 right-4 flex gap-2">
                   <button
-                    onClick={() => toggleBookmark(plant.id)}
+                    onClick={() => toggleBookmark(numericId)}
                     className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${bookmarked ? 'bg-herb-500 text-white' : 'bg-dark-800/80 backdrop-blur text-gray-400 hover:text-herb-400'
                       }`}
                   >
@@ -112,6 +245,23 @@ export default function PlantProfile() {
                   </button>
                   <button className="w-10 h-10 rounded-xl bg-dark-800/80 backdrop-blur text-gray-400 hover:text-herb-400 flex items-center justify-center">
                     <Share2 className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={handlePlayAudio}
+                    disabled={audioLoading}
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${isPlaying
+                      ? 'bg-herb-500 text-white'
+                      : 'bg-dark-800/80 backdrop-blur text-gray-400 hover:text-herb-400'
+                      }`}
+                    title={isPlaying ? 'Pause audio' : 'Play audio narration'}
+                  >
+                    {audioLoading ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : isPlaying ? (
+                      <Pause className="w-5 h-5" />
+                    ) : (
+                      <Volume2 className="w-5 h-5" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -247,25 +397,28 @@ export default function PlantProfile() {
               <div className="glass-card p-6">
                 <h3 className="font-display font-semibold text-white mb-6">Related Plants</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {relatedPlants.map(rp => (
-                    <Link key={rp.id} to={`/plant/${rp.id}`} className="group">
-                      <div className="relative h-32 rounded-xl overflow-hidden mb-3">
-                        <img
-                          src={rp.new_url || rp.image}
-                          alt={rp.common_name || rp.name}
-                          loading="lazy"
-                          className="w-full h-full object-cover transition-transform group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-dark-900/50 group-hover:bg-dark-900/30 transition-colors" />
-                      </div>
-                      <h4 className="text-white font-medium group-hover:text-herb-400 transition-colors line-clamp-1">
-                        {rp.common_name || rp.name}
-                      </h4>
-                      <p className="text-gray-500 text-sm">
-                        {rp.ayush_system || (Array.isArray(rp.ayushSystem) ? rp.ayushSystem[0] : rp.ayushSystem)}
-                      </p>
-                    </Link>
-                  ))}
+                  {relatedPlants.map(rp => {
+                    const rpId = rp.jsonId ?? rp.id;
+                    return (
+                      <Link key={rpId} to={`/plant/${rpId}`} className="group">
+                        <div className="relative h-32 rounded-xl overflow-hidden mb-3">
+                          <img
+                            src={rp.new_url || rp.image}
+                            alt={rp.common_name || rp.name}
+                            loading="lazy"
+                            className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-dark-900/50 group-hover:bg-dark-900/30 transition-colors" />
+                        </div>
+                        <h4 className="text-white font-medium group-hover:text-herb-400 transition-colors line-clamp-1">
+                          {rp.common_name || rp.name}
+                        </h4>
+                        <p className="text-gray-500 text-sm">
+                          {rp.ayush_system || (Array.isArray(rp.ayushSystem) ? rp.ayushSystem[0] : rp.ayushSystem)}
+                        </p>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}

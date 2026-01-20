@@ -31,10 +31,13 @@ const plantModels = {
 export default function PlantCard({ plant, index = 0 }) {
   const navigate = useNavigate();
   const { isBookmarked, toggleBookmark } = useBookmarks();
-  // Check if bookmarked using either id or jsonId. Ensure both are strings for comparison.
-  // The isBookmarked hook expects a single ID, but our store might contain either _id or jsonId (legacy).
-  // Ideally, useBookmarks should handle this, but for now we manually check both.
-  const bookmarked = isBookmarked(plant.id) || (plant.jsonId && isBookmarked(plant.jsonId));
+
+  // Get the numeric ID for 3D models and navigation
+  // Backend returns jsonId (numeric), local data has id (numeric)
+  const numericId = plant.jsonId ?? plant.id;
+
+  // Check if bookmarked using numeric ID
+  const bookmarked = isBookmarked(numericId);
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -43,7 +46,7 @@ export default function PlantCard({ plant, index = 0 }) {
 
   const imgRef = useRef(null);
 
-  const has3DModel = Boolean(plantModels[plant.id]);
+  const has3DModel = Boolean(plantModels[numericId]);
 
   // ---------- Normalize data ----------
   const plantName = plant.common_name || plant.name || 'Unnamed Plant';
@@ -88,7 +91,7 @@ export default function PlantCard({ plant, index = 0 }) {
       setImageLoaded(false);
       setImageError(false);
     }
-  }, [plant.id, imageUrl]);
+  }, [numericId, imageUrl]);
 
   const handleImageLoad = () => setImageLoaded(true);
   const handleImageError = () => {
@@ -96,11 +99,11 @@ export default function PlantCard({ plant, index = 0 }) {
     setImageLoaded(true);
   };
 
-  const handleCardClick = () => navigate(`/plant/${plant.id}`);
+  const handleCardClick = () => navigate(`/plant/${numericId}`);
   const handleLearnMoreClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate(`/plant/${plant.id}`);
+    navigate(`/plant/${numericId}`);
   };
   const handleEyeClick = (e) => {
     e.preventDefault();
@@ -150,7 +153,7 @@ export default function PlantCard({ plant, index = 0 }) {
 
           {has3DModel && isHovered && (
             <Suspense fallback={null}>
-              <PlantModelPreview modelPath={plantModels[plant.id]} isHovered />
+              <PlantModelPreview modelPath={plantModels[numericId]} isHovered />
             </Suspense>
           )}
 
@@ -165,7 +168,7 @@ export default function PlantCard({ plant, index = 0 }) {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              toggleBookmark(plant.id);
+              toggleBookmark(numericId);
             }}
             className={`absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center ${bookmarked
               ? 'bg-herb-500 text-white'
@@ -214,7 +217,7 @@ export default function PlantCard({ plant, index = 0 }) {
           isOpen={showModelModal}
           onClose={() => setShowModelModal(false)}
           plantName={plantName}
-          modelPath={plantModels[plant.id]}
+          modelPath={plantModels[numericId]}
         />
       )}
     </>

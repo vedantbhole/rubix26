@@ -15,6 +15,33 @@ import { InputFile } from 'node-appwrite/file';
 const router = express.Router();
 
 /**
+ * GET /api/generate/audio/file/:fileId
+ * Proxy endpoint to serve audio files from Appwrite (bypasses auth issues)
+ */
+router.get('/audio/file/:fileId', async (req, res, next) => {
+  try {
+    const { fileId } = req.params;
+
+    if (!fileId || !BUCKET_ID) {
+      return res.status(400).json({ success: false, message: 'Invalid file ID or bucket not configured' });
+    }
+
+    // Get file from Appwrite storage
+    const fileBuffer = await storage.getFileDownload(BUCKET_ID, fileId);
+
+    // Set appropriate headers for audio streaming
+    res.setHeader('Content-Type', 'audio/mpeg');
+    res.setHeader('Content-Disposition', 'inline');
+    res.setHeader('Cache-Control', 'public, max-age=86400'); // Cache for 24 hours
+
+    res.send(Buffer.from(fileBuffer));
+  } catch (error) {
+    console.error('Error proxying audio file:', error);
+    res.status(404).json({ success: false, message: 'Audio file not found' });
+  }
+});
+
+/**
  * POST /api/generate/image/:plantName
  * Generate an AI image for a plant and optionally save to Appwrite
  */
@@ -141,7 +168,7 @@ router.post('/audio/:plantName', async (req, res, next) => {
               if (BUCKET_ID && existingAudio.fileId) {
                 const fileBuffer = await storage.getFileDownload(BUCKET_ID, existingAudio.fileId);
                 await fs.writeFile(localFilePath, Buffer.from(fileBuffer));
-                
+
                 console.log(`💾 Downloaded and saved audio to: ${localFilePath}`);
               }
             }
