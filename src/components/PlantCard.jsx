@@ -31,7 +31,10 @@ const plantModels = {
 export default function PlantCard({ plant, index = 0 }) {
   const navigate = useNavigate();
   const { isBookmarked, toggleBookmark } = useBookmarks();
-  const bookmarked = isBookmarked(plant.id);
+  // Check if bookmarked using either id or jsonId. Ensure both are strings for comparison.
+  // The isBookmarked hook expects a single ID, but our store might contain either _id or jsonId (legacy).
+  // Ideally, useBookmarks should handle this, but for now we manually check both.
+  const bookmarked = isBookmarked(plant.id) || (plant.jsonId && isBookmarked(plant.jsonId));
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);

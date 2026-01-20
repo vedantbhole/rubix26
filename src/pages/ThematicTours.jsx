@@ -5,12 +5,14 @@ import {
   Map, ChevronRight, ChevronLeft, Play, Pause,
   RotateCcw, Leaf, ArrowRight, Check
 } from 'lucide-react';
-import { plants, healthThemes } from '../data/plants';
+import { healthThemes } from '../data/plants'; // Keep themes static for now
+import { usePlants } from '../hooks/usePlants';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export default function ThematicTours() {
+  const { plants, loading } = usePlants();
   const [searchParams] = useSearchParams();
   const initialTheme = searchParams.get('theme');
 
@@ -30,9 +32,11 @@ export default function ThematicTours() {
   const controlsRef = useRef(null);
   const clickablePlantsRef = useRef([]);
 
-  const tourPlants = selectedTour
-    ? selectedTour.plants.map(id => plants.find(p => p.id === id)).filter(Boolean)
-    : [];
+  const tourPlants = useMemo(() => {
+    if (!selectedTour || loading) return [];
+    // Match by ID. NOTE: static IDs were integers, DB jsonId is integer, but check strictness.
+    return selectedTour.plants.map(id => plants.find(p => p.jsonId === id || p.id === id)).filter(Boolean);
+  }, [selectedTour, plants, loading]);
 
   const currentPlant = tourPlants[currentPlantIndex];
 

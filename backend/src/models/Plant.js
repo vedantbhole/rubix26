@@ -15,8 +15,8 @@ const mediaItemSchema = new Schema({
 const medicinalUseSchema = new Schema({
   use: { type: String, required: true },
   traditionalEvidence: { type: Boolean, default: false },
-  scientificEvidence: { 
-    type: String, 
+  scientificEvidence: {
+    type: String,
     enum: ['none', 'preliminary', 'moderate', 'strong'],
     default: 'none'
   }
@@ -41,14 +41,28 @@ const explanationsSchema = new Schema({
 // Main Plant schema
 const plantSchema = new Schema({
   // Identification
-  name: { 
-    type: String, 
-    required: true, 
-    unique: true, 
+  name: {
+    type: String,
+    required: true,
+    unique: true,
     index: true,
     lowercase: true,
     trim: true
   },
+  // Fields from data.json (snake_case)
+  jsonId: { type: Number }, // Original ID from JSON
+  common_name: { type: String, trim: true },
+  botanical_name: { type: String, trim: true },
+  ayush_system: { type: String, trim: true },
+  disease_category: [{ type: String }],
+  part_used: { type: String },
+  region: { type: String },
+  medicinal_properties: [{ type: String }],
+  therapeutic_uses: [{ type: String }],
+  precautions: { type: String },
+  image_url: { type: String },
+  new_url: { type: String },
+
   scientificName: { type: String, trim: true },
   commonNames: [{ type: String }],
   family: { type: String },
@@ -82,37 +96,43 @@ const plantSchema = new Schema({
   generatedByAI: { type: Boolean, default: false },
   aiModel: { type: String },
   viewCount: { type: Number, default: 0 },
-  
-}, { 
+
+}, {
   timestamps: true,
   toJSON: { virtuals: true },
   toObject: { virtuals: true }
 });
 
 // Index for text search
-plantSchema.index({ 
-  name: 'text', 
-  scientificName: 'text', 
+plantSchema.index({
+  name: 'text',
+  scientificName: 'text',
   commonNames: 'text',
-  description: 'text' 
+  description: 'text',
+  common_name: 'text',
+  botanical_name: 'text',
+  medicinal_properties: 'text',
+  therapeutic_uses: 'text'
 });
 
 // Virtual for checking if plant has media
-plantSchema.virtual('hasMedia').get(function() {
+plantSchema.virtual('hasMedia').get(function () {
   return (
     (this.media?.images?.length > 0) ||
     (this.media?.videos?.length > 0) ||
-    (this.media?.audio?.length > 0)
+    (this.media?.audio?.length > 0) ||
+    !!this.image_url ||
+    !!this.new_url
   );
 });
 
 // Static method to find by name (case-insensitive)
-plantSchema.statics.findByName = function(name) {
+plantSchema.statics.findByName = function (name) {
   return this.findOne({ name: name.toLowerCase().trim() });
 };
 
 // Instance method to increment view count
-plantSchema.methods.incrementViews = async function() {
+plantSchema.methods.incrementViews = async function () {
   this.viewCount += 1;
   return this.save();
 };

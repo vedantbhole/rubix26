@@ -1,5 +1,6 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
+import mongoose from 'mongoose';
 import User from '../models/User.js';
 import { protect } from '../middleware/authMiddleware.js';
 
@@ -290,6 +291,22 @@ router.patch('/profile', protect, async (req, res) => {
     }
 });
 
+// Helper to resolve plant ID
+const resolvePlantId = async (id) => {
+    // If it's a valid ObjectId, return it
+    if (mongoose.Types.ObjectId.isValid(id)) {
+        return id;
+    }
+    // If it's a number (or string number), try to find by jsonId
+    const numId = parseInt(id);
+    if (!isNaN(numId)) {
+        const Plant = mongoose.model('Plant');
+        const plant = await Plant.findOne({ jsonId: numId });
+        return plant ? plant._id : null;
+    }
+    return null;
+};
+
 // @route   PUT /api/auth/bookmarks
 // @desc    Update user's bookmarked plants
 // @access  Private
@@ -304,17 +321,25 @@ router.put('/bookmarks', protect, async (req, res) => {
             });
         }
 
+        const resolvedId = await resolvePlantId(plantId);
+        if (!resolvedId) {
+            return res.status(404).json({
+                success: false,
+                error: 'Plant not found'
+            });
+        }
+
         const user = await User.findById(req.user._id);
 
         if (action === 'add') {
             // Add plant if not already bookmarked
-            if (!user.bookmarkedPlants.includes(plantId)) {
-                user.bookmarkedPlants.push(plantId);
+            if (!user.bookmarkedPlants.some(id => id.toString() === resolvedId.toString())) {
+                user.bookmarkedPlants.push(resolvedId);
             }
         } else if (action === 'remove') {
             // Remove plant from bookmarks
             user.bookmarkedPlants = user.bookmarkedPlants.filter(
-                id => id.toString() !== plantId
+                id => id.toString() !== resolvedId.toString()
             );
         } else {
             return res.status(400).json({
@@ -355,9 +380,21 @@ router.put('/bookmarks/sync', protect, async (req, res) => {
             });
         }
 
+        // Resolve all IDs
+        const resolvedIds = [];
+        for (const id of plantIds) {
+            const resolved = await resolvePlantId(id);
+            if (resolved) {
+                resolvedIds.push(resolved);
+            }
+        }
+
+        // Deduplicate
+        const uniqueIds = [...new Set(resolvedIds.map(id => id.toString()))];
+
         const user = await User.findByIdAndUpdate(
             req.user._id,
-            { bookmarkedPlants: plantIds },
+            { bookmarkedPlants: uniqueIds },
             { new: true }
         );
 

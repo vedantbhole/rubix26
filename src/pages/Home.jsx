@@ -7,9 +7,11 @@ import {
 } from 'lucide-react';
 import ScrollPlantAnimation from '../components/ScrollPlantAnimation';
 import PlantCard from '../components/PlantCard';
-import { plants, healthThemes, ayushSystems } from '../data/plants';
+import { healthThemes, ayushSystems } from '../data/plants'; // Keep static for now
+import { usePlants } from '../hooks/usePlants'; // Fetch dynamic plants
 
 export default function Home() {
+  const { plants, loading } = usePlants();
   const [scrollProgress, setScrollProgress] = useState(0);
   const heroRef = useRef(null);
 
@@ -145,7 +147,7 @@ export default function Home() {
                 Explore Plants
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/tours" className="btn-secondary flex items-center gap-2">
+              <Link to="/tour" className="btn-secondary flex items-center gap-2">
                 <Map className="w-5 h-5" />
                 Take a Tour
               </Link>

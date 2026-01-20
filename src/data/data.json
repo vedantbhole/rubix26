@@ -1,0 +1,3283 @@
+[
+  {
+    "id": 1,
+    "common_name": "Tulsi (Holy Basil)",
+    "botanical_name": "Ocimum sanctum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory",
+      "Immunology",
+      "Psychiatry"
+    ],
+    "part_used": "Leaves",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Adaptogenic",
+      "Antimicrobial",
+      "Immunomodulatory"
+    ],
+    "therapeutic_uses": [
+      "Respiratory disorders",
+      "Stress",
+      "Immunity"
+    ],
+    "precautions": "Avoid in women trying to conceive.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Ocimum+sanctum+Holy+Basil+plant+close+up",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Tulsi_or_Tulasi_Holy_basil.jpg/500px-Tulsi_or_Tulasi_Holy_basil.jpg"
+  },
+  {
+    "id": 2,
+    "common_name": "Ashwagandha",
+    "botanical_name": "Withania somnifera",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Musculoskeletal",
+      "Endocrinology"
+    ],
+    "part_used": "Roots",
+    "region": "Dry Regions (Rajasthan/MP)",
+    "medicinal_properties": [
+      "Adaptogenic",
+      "Sedative",
+      "Neuroprotective"
+    ],
+    "therapeutic_uses": [
+      "Anxiety",
+      "Insomnia",
+      "Joint pain"
+    ],
+    "precautions": "Avoid during pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Withania+somnifera+plant+medicinal",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/WithaniaFruit.jpg/500px-WithaniaFruit.jpg"
+  },
+  {
+    "id": 3,
+    "common_name": "Turmeric (Haldi)",
+    "botanical_name": "Curcuma longa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Musculoskeletal",
+      "Gastrointestinal"
+    ],
+    "part_used": "Rhizome",
+    "region": "Tropical South Asia",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Antioxidant",
+      "Antiseptic"
+    ],
+    "therapeutic_uses": [
+      "Wound healing",
+      "Arthritis",
+      "Skin health"
+    ],
+    "precautions": "Caution with gallstones.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Curcuma+longa+turmeric+rhizome",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Turmeric_inflorescence.jpg/500px-Turmeric_inflorescence.jpg"
+  },
+  {
+    "id": 4,
+    "common_name": "Neem",
+    "botanical_name": "Azadirachta indica",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Dentistry",
+      "Immunology"
+    ],
+    "part_used": "Leaves/Bark",
+    "region": "Indian Subcontinent",
+    "medicinal_properties": [
+      "Antibacterial",
+      "Antifungal",
+      "Detoxifying"
+    ],
+    "therapeutic_uses": [
+      "Skin diseases",
+      "Dental health",
+      "Blood purification"
+    ],
+    "precautions": "Unsafe for use during pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Azadirachta+indica+neem+leaves",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Neem_Tree_in_Rajasthan%2C_India.jpg/500px-Neem_Tree_in_Rajasthan%2C_India.jpg"
+  },
+  {
+    "id": 5,
+    "common_name": "Amla (Indian Gooseberry)",
+    "botanical_name": "Emblica officinalis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Dermatology",
+      "Immunology"
+    ],
+    "part_used": "Fruit",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Antioxidant",
+      "Rejuvenative",
+      "Digestive"
+    ],
+    "therapeutic_uses": [
+      "Immunity",
+      "Hair health",
+      "Hyperacidity"
+    ],
+    "precautions": "May increase bleeding risk.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Emblica+officinalis+amla+fruit+on+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Phyllanthus_officinalis.jpg/500px-Phyllanthus_officinalis.jpg"
+  },
+  {
+    "id": 6,
+    "common_name": "Aloe Vera (Ghritkumari)",
+    "botanical_name": "Aloe barbadensis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Leaf Gel",
+    "region": "Arid/Semi-Arid Regions",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Laxative",
+      "Moisturizing"
+    ],
+    "therapeutic_uses": [
+      "Skin burns",
+      "Constipation",
+      "Skin health"
+    ],
+    "precautions": "Avoid internal use during pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Aloe+barbadensis+vera+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Aloe_vera_flower_inset.png/500px-Aloe_vera_flower_inset.png"
+  },
+  {
+    "id": 7,
+    "common_name": "Giloy (Guduchi)",
+    "botanical_name": "Tinospora cordifolia",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Immunology",
+      "Endocrinology",
+      "Infectious Disease"
+    ],
+    "part_used": "Stem",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Immunomodulatory",
+      "Antipyretic",
+      "Anti-arthritic"
+    ],
+    "therapeutic_uses": [
+      "Chronic fever",
+      "Dengue",
+      "Diabetes"
+    ],
+    "precautions": "Avoid in autoimmune diseases.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Tinospora+cordifolia+heart+leaved+moonseed",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tinospora_cordifolia.jpg/500px-Tinospora_cordifolia.jpg"
+  },
+  {
+    "id": 8,
+    "common_name": "Brahmi",
+    "botanical_name": "Bacopa monnieri",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Psychiatry"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Wetlands/Marshy India",
+    "medicinal_properties": [
+      "Nootropic",
+      "Anxiolytic",
+      "Antioxidant"
+    ],
+    "therapeutic_uses": [
+      "Memory enhancement",
+      "Anxiety",
+      "ADHD"
+    ],
+    "precautions": "May cause stomach cramps.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Bacopa+monnieri+plant+in+water",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Starr_010818-0007_Bacopa_monnieri.jpg/500px-Starr_010818-0007_Bacopa_monnieri.jpg"
+  },
+  {
+    "id": 9,
+    "common_name": "Ginger (Adrak)",
+    "botanical_name": "Zingiber officinale",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Musculoskeletal"
+    ],
+    "part_used": "Rhizome",
+    "region": "Kerala/Northeast India",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Antiemetic",
+      "Carminative"
+    ],
+    "therapeutic_uses": [
+      "Nausea",
+      "Indigestion",
+      "Arthritis"
+    ],
+    "precautions": "Avoid high doses with blood thinners.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Zingiber+officinale+ginger+root",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Koeh-146-no_text.jpg/500px-Koeh-146-no_text.jpg"
+  },
+  {
+    "id": 10,
+    "common_name": "Garlic (Lahsun)",
+    "botanical_name": "Allium sativum",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Cardiology",
+      "Infectious Disease"
+    ],
+    "part_used": "Bulb",
+    "region": "Cultivated Global",
+    "medicinal_properties": [
+      "Antimicrobial",
+      "Cardioprotective",
+      "Hypolipidemic"
+    ],
+    "therapeutic_uses": [
+      "High cholesterol",
+      "Hypertension",
+      "Infections"
+    ],
+    "precautions": "May cause bleeding.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Allium+sativum+garlic+bulbs",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Allium_sativum_Woodwill_1793.jpg"
+  },
+  {
+    "id": 12,
+    "common_name": "Shatavari",
+    "botanical_name": "Asparagus racemosus",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gynecology",
+      "Reproductive Health"
+    ],
+    "part_used": "Roots",
+    "region": "Himalayas/Tropical India",
+    "medicinal_properties": [
+      "Galactogogue",
+      "Rejuvenative",
+      "Demulcent"
+    ],
+    "therapeutic_uses": [
+      "Female reproductive health",
+      "Lactation",
+      "Menopause"
+    ],
+    "precautions": "Avoid if history of estrogen-sensitive cancers.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Asparagus+racemosus+plant+roots",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Asparagus_racemosus.JPG/500px-Asparagus_racemosus.JPG"
+  },
+  {
+    "id": 13,
+    "common_name": "Arjuna",
+    "botanical_name": "Terminalia arjuna",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Cardiology"
+    ],
+    "part_used": "Bark",
+    "region": "River Banks of Central India",
+    "medicinal_properties": [
+      "Cardioprotective",
+      "Anti-ischemic",
+      "Hypolipidemic"
+    ],
+    "therapeutic_uses": [
+      "Heart disease",
+      "Angina",
+      "High blood pressure"
+    ],
+    "precautions": "Caution with blood thinners.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Terminalia+arjuna+tree+bark",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Fruit_I_IMG_9577.jpg/500px-Fruit_I_IMG_9577.jpg"
+  },
+  {
+    "id": 14,
+    "common_name": "Mulethi (Licorice)",
+    "botanical_name": "Glycyrrhiza glabra",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory",
+      "Gastrointestinal"
+    ],
+    "part_used": "Roots",
+    "region": "Sub-Himalayan Tract",
+    "medicinal_properties": [
+      "Expectorant",
+      "Anti-inflammatory",
+      "Demulcent"
+    ],
+    "therapeutic_uses": [
+      "Sore throat",
+      "Gastric ulcers",
+      "Cough"
+    ],
+    "precautions": "Long-term use may raise blood pressure.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Glycyrrhiza+glabra+liquorice+roots",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Illustration_Glycyrrhiza_glabra0.jpg/500px-Illustration_Glycyrrhiza_glabra0.jpg"
+  },
+  {
+    "id": 15,
+    "common_name": "Vasaka (Malabar Nut)",
+    "botanical_name": "Adhatoda vasica",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory"
+    ],
+    "part_used": "Leaves",
+    "region": "Lower Himalayas/India",
+    "medicinal_properties": [
+      "Bronchodilator",
+      "Expectorant",
+      "Antispasmodic"
+    ],
+    "therapeutic_uses": [
+      "Asthma",
+      "Bronchitis",
+      "Cough"
+    ],
+    "precautions": "Avoid in early pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Adhatoda+vasica+medicinal+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Justicia_adhatoda_1.jpg/500px-Justicia_adhatoda_1.jpg"
+  },
+  {
+    "id": 16,
+    "common_name": "Kalmegh",
+    "botanical_name": "Andrographis paniculata",
+    "ayush_system": "Siddha",
+    "disease_category": [
+      "Hepatology",
+      "Infectious Disease"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Plains of India",
+    "medicinal_properties": [
+      "Hepatoprotective",
+      "Antiviral",
+      "Bitter Tonic"
+    ],
+    "therapeutic_uses": [
+      "Liver disorders",
+      "Fever",
+      "Common cold"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Andrographis+paniculata+green+herb",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Andrographis_paniculata_%28Kalpa%29_in_Narshapur_forest%2C_AP_W2_IMG_0867.jpg/500px-Andrographis_paniculata_%28Kalpa%29_in_Narshapur_forest%2C_AP_W2_IMG_0867.jpg"
+  },
+  {
+    "id": 17,
+    "common_name": "Bhringraj",
+    "botanical_name": "Eclipta alba",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Hepatology"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Moist Tropical Regions",
+    "medicinal_properties": [
+      "Hepatoprotective",
+      "Hair Tonic",
+      "Rejuvenative"
+    ],
+    "therapeutic_uses": [
+      "Hair loss",
+      "Liver disorders",
+      "Skin diseases"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Eclipta+alba+small+white+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/False_daisy_or_bhringraj_%28Eclipta_prostrata%29_flower.jpg/500px-False_daisy_or_bhringraj_%28Eclipta_prostrata%29_flower.jpg"
+  },
+  {
+    "id": 18,
+    "common_name": "Shankhpushpi",
+    "botanical_name": "Convolvulus pluricaulis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Psychiatry"
+    ],
+    "part_used": "Whole Plant",
+    "region": "North India",
+    "medicinal_properties": [
+      "Nootropic",
+      "Anxiolytic",
+      "Sedative"
+    ],
+    "therapeutic_uses": [
+      "Memory recall",
+      "Anxiety",
+      "Insomnia"
+    ],
+    "precautions": "May lower blood pressure.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Convolvulus+pluricaulis+blue+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Evolvulus_pilosus.jpg/500px-Evolvulus_pilosus.jpg"
+  },
+  {
+    "id": 19,
+    "common_name": "Guggul",
+    "botanical_name": "Commiphora wightii",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Cardiology",
+      "Musculoskeletal",
+      "Endocrinology"
+    ],
+    "part_used": "Resin",
+    "region": "Arid Zones (Rajasthan)",
+    "medicinal_properties": [
+      "Hypolipidemic",
+      "Anti-inflammatory",
+      "Anti-arthritic"
+    ],
+    "therapeutic_uses": [
+      "High cholesterol",
+      "Obesity",
+      "Arthritis"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Commiphora+wightii+plant+resin",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Guggul_at_natural_habitat.jpeg/500px-Guggul_at_natural_habitat.jpeg"
+  },
+  {
+    "id": 20,
+    "common_name": "Jatamansi",
+    "botanical_name": "Nardostachys jatamansi",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Psychiatry"
+    ],
+    "part_used": "Rhizome/Root",
+    "region": "Alpine Himalayas",
+    "medicinal_properties": [
+      "Sedative",
+      "Neuroprotective",
+      "Hypotensive"
+    ],
+    "therapeutic_uses": [
+      "Insomnia",
+      "Stress",
+      "Epilepsy"
+    ],
+    "precautions": "Use under supervision.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Nardostachys+jatamansi+hairy+roots",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Nardostachys_grandiflora.jpg/500px-Nardostachys_grandiflora.jpg"
+  },
+  {
+    "id": 21,
+    "common_name": "Fenugreek (Methi)",
+    "botanical_name": "Trigonella foenum-graecum",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Endocrinology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Seeds",
+    "region": "North India/Mediterranean",
+    "medicinal_properties": [
+      "Hypoglycemic",
+      "Galactogogue",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Lactation support",
+      "Digestion"
+    ],
+    "precautions": "Monitor blood sugar.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Trigonella+foenum-graecum+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Illustration_Trigonella_foenum-graecum0_clean.jpg/500px-Illustration_Trigonella_foenum-graecum0_clean.jpg"
+  },
+  {
+    "id": 22,
+    "common_name": "Cinnamon (Dalchini)",
+    "botanical_name": "Cinnamomum verum",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Endocrinology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Bark",
+    "region": "South India/Sri Lanka",
+    "medicinal_properties": [
+      "Antidiabetic",
+      "Antimicrobial",
+      "Carminative"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Digestive issues",
+      "Cold & Flu"
+    ],
+    "precautions": "High doses may harm liver.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cinnamomum+verum+cinnamon+sticks",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cinnamomum_verum1.jpg"
+  },
+  {
+    "id": 23,
+    "common_name": "Clove (Laung)",
+    "botanical_name": "Syzygium aromaticum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dentistry",
+      "Gastrointestinal"
+    ],
+    "part_used": "Flower Bud",
+    "region": "Coastal India",
+    "medicinal_properties": [
+      "Analgesic",
+      "Antiseptic",
+      "Carminative"
+    ],
+    "therapeutic_uses": [
+      "Toothache",
+      "Digestive gas",
+      "Respiratory infections"
+    ],
+    "precautions": "Clove oil can burn skin/gums.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Syzygium+aromaticum+cloves",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Syzygium_aromaticum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-030.jpg"
+  },
+  {
+    "id": 24,
+    "common_name": "Black Pepper (Kali Mirch)",
+    "botanical_name": "Piper nigrum",
+    "ayush_system": "Siddha",
+    "disease_category": [
+      "Gastrointestinal",
+      "Respiratory"
+    ],
+    "part_used": "Fruit",
+    "region": "South India (Kerala)",
+    "medicinal_properties": [
+      "Bio-enhancer",
+      "Digestive",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Digestion",
+      "Cold",
+      "Metabolism boost"
+    ],
+    "precautions": "Excess may irritate stomach.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Piper+nigrum+black+peppercorns",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Piper_nigrum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-107.jpg"
+  },
+  {
+    "id": 25,
+    "common_name": "Cardamom (Elaichi)",
+    "botanical_name": "Elettaria cardamomum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Respiratory"
+    ],
+    "part_used": "Seeds/Pods",
+    "region": "Western Ghats",
+    "medicinal_properties": [
+      "Carminative",
+      "Diuretic",
+      "Expectorant"
+    ],
+    "therapeutic_uses": [
+      "Bad breath",
+      "Digestion",
+      "Nausea"
+    ],
+    "precautions": "Caution with gallstones.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Elettaria+cardamomum+pods",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Elettaria_cardamomum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-057.jpg"
+  },
+  {
+    "id": 26,
+    "common_name": "Hibiscus (Gudhal)",
+    "botanical_name": "Hibiscus rosa-sinensis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Gynecology"
+    ],
+    "part_used": "Flower",
+    "region": "Tropical Global",
+    "medicinal_properties": [
+      "Refrigerant",
+      "Emmenagogue",
+      "Hair Tonic"
+    ],
+    "therapeutic_uses": [
+      "Hair growth",
+      "Menstrual regulation",
+      "High blood pressure"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Hibiscus+rosa-sinensis+red+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Citrus_swallowtails_%28Papilio_demodocus%29_Principe.jpg/500px-Citrus_swallowtails_%28Papilio_demodocus%29_Principe.jpg"
+  },
+  {
+    "id": 27,
+    "common_name": "Punarnava",
+    "botanical_name": "Boerhavia diffusa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Hepatology"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Diuretic",
+      "Hepatoprotective",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Kidney stones",
+      "Edema",
+      "Liver disorders"
+    ],
+    "precautions": "Monitor electrolytes.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Boerhavia+diffusa+creeping+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Boerhavia_diffusa.jpg/500px-Boerhavia_diffusa.jpg"
+  },
+  {
+    "id": 28,
+    "common_name": "Isabgol (Psyllium)",
+    "botanical_name": "Plantago ovata",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Seed Husk",
+    "region": "North Gujarat/Rajasthan",
+    "medicinal_properties": [
+      "Laxative",
+      "Demulcent",
+      "Hypolipidemic"
+    ],
+    "therapeutic_uses": [
+      "Constipation",
+      "Diarrhea",
+      "Cholesterol control"
+    ],
+    "precautions": "Take with water.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Plantago+ovata+psyllium+husk",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Plantago_ovata_form.jpg/500px-Plantago_ovata_form.jpg"
+  },
+  {
+    "id": 29,
+    "common_name": "Senna",
+    "botanical_name": "Cassia angustifolia",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Leaves/Pods",
+    "region": "South India",
+    "medicinal_properties": [
+      "Purgative",
+      "Laxative"
+    ],
+    "therapeutic_uses": [
+      "Severe constipation",
+      "Bowel preparation"
+    ],
+    "precautions": "Short-term use only.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cassia+angustifolia+yellow+flowers",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Senna_alexandrina_Mill.-Cassia_angustifolia_L._%28Senna_Plant%29.jpg/500px-Senna_alexandrina_Mill.-Cassia_angustifolia_L._%28Senna_Plant%29.jpg"
+  },
+  {
+    "id": 30,
+    "common_name": "Haritaki",
+    "botanical_name": "Terminalia chebula",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Detox"
+    ],
+    "part_used": "Fruit",
+    "region": "Himalayas/South India",
+    "medicinal_properties": [
+      "Laxative",
+      "Rejuvenative",
+      "Astringent"
+    ],
+    "therapeutic_uses": [
+      "Digestion",
+      "Detoxification",
+      "Eye health"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Terminalia+chebula+fruit",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Harra_%28Terminalia_chebula%29_leafless_tree_at_23_Mile%2C_Duars%2C_WB_W_IMG_5905.jpg"
+  },
+  {
+    "id": 31,
+    "common_name": "Baheda (Bibhitaki)",
+    "botanical_name": "Terminalia bellirica",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory",
+      "Dermatology"
+    ],
+    "part_used": "Fruit",
+    "region": "Deciduous Forests India",
+    "medicinal_properties": [
+      "Astringent",
+      "Expectorant",
+      "Laxative"
+    ],
+    "therapeutic_uses": [
+      "Respiratory issues",
+      "Sore throat",
+      "Hair health"
+    ],
+    "precautions": "Avoid in dry cough.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Terminalia+bellirica+tree+fruit",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Terminalia_bellirica.jpg/500px-Terminalia_bellirica.jpg"
+  },
+  {
+    "id": 32,
+    "common_name": "Safed Musli",
+    "botanical_name": "Chlorophytum borivilianum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Reproductive Health",
+      "Immunology"
+    ],
+    "part_used": "Roots",
+    "region": "Central India",
+    "medicinal_properties": [
+      "Aphrodisiac",
+      "Adaptogenic",
+      "Immunomodulatory"
+    ],
+    "therapeutic_uses": [
+      "Sexual weakness",
+      "Bodybuilding",
+      "Fatigue"
+    ],
+    "precautions": "High doses may cause weight gain.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Chlorophytum+borivilianum+white+roots",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Chlorophytum_borivilianum_%284695984110%29.jpg/500px-Chlorophytum_borivilianum_%284695984110%29.jpg"
+  },
+  {
+    "id": 33,
+    "common_name": "Pippali (Long Pepper)",
+    "botanical_name": "Piper longum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory",
+      "Gastrointestinal"
+    ],
+    "part_used": "Fruit",
+    "region": "Northeast India",
+    "medicinal_properties": [
+      "Bio-enhancer",
+      "Digestive",
+      "Rejuvenative"
+    ],
+    "therapeutic_uses": [
+      "Respiratory diseases",
+      "Indigestion",
+      "Metabolism"
+    ],
+    "precautions": "Prolonged use not recommended.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Piper+longum+long+pepper+fruit",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Piper_longum_print.jpg"
+  },
+  {
+    "id": 34,
+    "common_name": "Chitrak",
+    "botanical_name": "Plumbago zeylanica",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Dermatology"
+    ],
+    "part_used": "Roots",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Digestive",
+      "Carminative",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Indigestion",
+      "Piles",
+      "Obesity"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Plumbago+zeylanica+white+leadwort",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Plumbago_zeylanica1MTFL.jpg/500px-Plumbago_zeylanica1MTFL.jpg"
+  },
+  {
+    "id": 35,
+    "common_name": "Manjistha",
+    "botanical_name": "Rubia cordifolia",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Hematology"
+    ],
+    "part_used": "Roots/Stem",
+    "region": "Himalayas",
+    "medicinal_properties": [
+      "Blood Purifier",
+      "Anti-inflammatory",
+      "Antioxidant"
+    ],
+    "therapeutic_uses": [
+      "Skin disorders",
+      "Acne",
+      "Pigmentation"
+    ],
+    "precautions": "Caution in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Rubia+cordifolia+madder+roots",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rubia_cordifolia.jpg/500px-Rubia_cordifolia.jpg"
+  },
+  {
+    "id": 36,
+    "common_name": "Kutki",
+    "botanical_name": "Picrorhiza kurroa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Hepatology",
+      "Immunology"
+    ],
+    "part_used": "Rhizome",
+    "region": "Northwestern Himalayas",
+    "medicinal_properties": [
+      "Hepatoprotective",
+      "Bitter Tonic",
+      "Immunomodulatory"
+    ],
+    "therapeutic_uses": [
+      "Liver cirrhosis",
+      "Jaundice",
+      "Fever"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Picrorhiza+kurroa+himalayan+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Picrorhiza_kurroa_kz01.jpg/500px-Picrorhiza_kurroa_kz01.jpg"
+  },
+  {
+    "id": 37,
+    "common_name": "Sarpgandha",
+    "botanical_name": "Rauvolfia serpentina",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Cardiology",
+      "Psychiatry"
+    ],
+    "part_used": "Roots",
+    "region": "Sub-Himalayan Tract",
+    "medicinal_properties": [
+      "Antihypertensive",
+      "Sedative",
+      "Tranquilizer"
+    ],
+    "therapeutic_uses": [
+      "High blood pressure",
+      "Insomnia",
+      "Mental disorders"
+    ],
+    "precautions": "Strict medical supervision.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Rauvolfia+serpentina+indian+snakeroot",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Rauvolfia_serpentina_11.JPG/500px-Rauvolfia_serpentina_11.JPG"
+  },
+  {
+    "id": 38,
+    "common_name": "Babool",
+    "botanical_name": "Acacia nilotica",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Dentistry",
+      "Dermatology"
+    ],
+    "part_used": "Bark/Gum",
+    "region": "Dry India/Africa",
+    "medicinal_properties": [
+      "Astringent",
+      "Antimicrobial",
+      "Hemostatic"
+    ],
+    "therapeutic_uses": [
+      "Dental health",
+      "Diarrhea",
+      "Wound healing"
+    ],
+    "precautions": "May cause constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Acacia+nilotica+tree+gum",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Macro_view_of_thorn_and_leaves_of_a_Babul_tree_%28Vachellia_nilotica%29_from_Rajasthan%2C_India.jpg/500px-Macro_view_of_thorn_and_leaves_of_a_Babul_tree_%28Vachellia_nilotica%29_from_Rajasthan%2C_India.jpg"
+  },
+  {
+    "id": 39,
+    "common_name": "Bael (Bilva)",
+    "botanical_name": "Aegle marmelos",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Fruit Pulp/Leaves",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Antidiarrheal",
+      "Digestive",
+      "Cooling"
+    ],
+    "therapeutic_uses": [
+      "Dysentery",
+      "Diarrhea",
+      "Digestion"
+    ],
+    "precautions": "Leaves may lower blood sugar.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Aegle+marmelos+bael+fruit",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bael_%28Aegle_marmelos%29_tree_at_Narendrapur_W_IMG_4116.jpg/500px-Bael_%28Aegle_marmelos%29_tree_at_Narendrapur_W_IMG_4116.jpg"
+  },
+  {
+    "id": 40,
+    "common_name": "Jamun",
+    "botanical_name": "Syzygium cumini",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Seed/Fruit",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Antidiabetic",
+      "Astringent",
+      "Digestive"
+    ],
+    "therapeutic_uses": [
+      "Diabetes management",
+      "Dysentery",
+      "Digestion"
+    ],
+    "precautions": "Avoid milk after eating Jamun.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Syzygium+cumini+black+plum+fruit",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Syzygium_cumini_Bra30.png/500px-Syzygium_cumini_Bra30.png"
+  },
+  {
+    "id": 41,
+    "common_name": "Karela (Bitter Melon)",
+    "botanical_name": "Momordica charantia",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Dermatology"
+    ],
+    "part_used": "Fruit",
+    "region": "Tropical Asia",
+    "medicinal_properties": [
+      "Hypoglycemic",
+      "Blood Purifier",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Skin diseases",
+      "Blood purification"
+    ],
+    "precautions": "Excess may cause hypoglycemia.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Momordica+charantia+bitter+gourd",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Momordica_charantia_Blanco2.357.png/500px-Momordica_charantia_Blanco2.357.png"
+  },
+  {
+    "id": 42,
+    "common_name": "Gokshura",
+    "botanical_name": "Tribulus terrestris",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Reproductive Health"
+    ],
+    "part_used": "Fruit",
+    "region": "Global/Warm Climates",
+    "medicinal_properties": [
+      "Diuretic",
+      "Aphrodisiac",
+      "Androgenic"
+    ],
+    "therapeutic_uses": [
+      "Kidney stones",
+      "Urinary health",
+      "Male vitality"
+    ],
+    "precautions": "Caution in prostate cancer.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Tribulus+terrestris+plant+fruit",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Tribulus_terrestris_%28Family_Zygophyllaceae%29.jpg/500px-Tribulus_terrestris_%28Family_Zygophyllaceae%29.jpg"
+  },
+  {
+    "id": 43,
+    "common_name": "Hing (Asafoetida)",
+    "botanical_name": "Ferula assa-foetida",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal",
+      "Respiratory"
+    ],
+    "part_used": "Resin",
+    "region": "Afghanistan/Iran/India",
+    "medicinal_properties": [
+      "Carminative",
+      "Antispasmodic",
+      "Digestive"
+    ],
+    "therapeutic_uses": [
+      "Gas/Bloating",
+      "Indigestion",
+      "Menstrual pain"
+    ],
+    "precautions": "Avoid in infants.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Ferula+assa-foetida+resin",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Asa_foetida_Kaempfer.jpg/500px-Asa_foetida_Kaempfer.jpg"
+  },
+  {
+    "id": 44,
+    "common_name": "Ajwain (Carom Seeds)",
+    "botanical_name": "Trachyspermum ammi",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Respiratory"
+    ],
+    "part_used": "Seeds",
+    "region": "Egypt/India",
+    "medicinal_properties": [
+      "Carminative",
+      "Antispasmodic",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Indigestion",
+      "Gas",
+      "Cough/Asthma"
+    ],
+    "precautions": "Increases body heat.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Trachyspermum+ammi+ajwain+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Carom_Flowers.jpg/500px-Carom_Flowers.jpg"
+  },
+  {
+    "id": 45,
+    "common_name": "Saunf (Fennel)",
+    "botanical_name": "Foeniculum vulgare",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Seeds",
+    "region": "Mediterranean/India",
+    "medicinal_properties": [
+      "Carminative",
+      "Digestive",
+      "Galactogogue"
+    ],
+    "therapeutic_uses": [
+      "Digestion",
+      "Bad breath",
+      "Lactation"
+    ],
+    "precautions": "Oil is toxic in large amounts.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Foeniculum+vulgare+fennel+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Foeniculum_July_2011-1a.jpg/500px-Foeniculum_July_2011-1a.jpg"
+  },
+  {
+    "id": 46,
+    "common_name": "Dhania (Coriander)",
+    "botanical_name": "Coriandrum sativum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Seeds/Leaves",
+    "region": "Global/India",
+    "medicinal_properties": [
+      "Diuretic",
+      "Digestive",
+      "Refrigerant"
+    ],
+    "therapeutic_uses": [
+      "Burning urination",
+      "Fever",
+      "Thyroid health"
+    ],
+    "precautions": "Rare allergic reactions.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Coriandrum+sativum+coriander+leaves",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Coriandrum_sativum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-193.jpg"
+  },
+  {
+    "id": 47,
+    "common_name": "Jeera (Cumin)",
+    "botanical_name": "Cuminum cyminum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Seeds",
+    "region": "Mediterranean/India",
+    "medicinal_properties": [
+      "Digestive",
+      "Carminative",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Indigestion",
+      "Metabolism",
+      "Insomnia"
+    ],
+    "precautions": "May slow blood clotting.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cuminum+cyminum+cumin+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Cuminum_cyminum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-198.jpg"
+  },
+  {
+    "id": 48,
+    "common_name": "Chirata",
+    "botanical_name": "Swertia chirata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Infectious Disease",
+      "Dermatology"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Himalayas",
+    "medicinal_properties": [
+      "Bitter Tonic",
+      "Antipyretic",
+      "Hepatoprotective"
+    ],
+    "therapeutic_uses": [
+      "Fever",
+      "Malaria",
+      "Skin diseases"
+    ],
+    "precautions": "Causes vomiting in high doses.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Swertia+chirata+medicinal+herb",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Swertia_perennis_230705.jpg/500px-Swertia_perennis_230705.jpg"
+  },
+  {
+    "id": 49,
+    "common_name": "Vacha (Sweet Flag)",
+    "botanical_name": "Acorus calamus",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Otolaryngology (ENT)"
+    ],
+    "part_used": "Rhizome",
+    "region": "Marshy Lands India/Europe",
+    "medicinal_properties": [
+      "Nootropic",
+      "Carminative",
+      "Sedative"
+    ],
+    "therapeutic_uses": [
+      "Speech disorders",
+      "Memory",
+      "Nervous disorders"
+    ],
+    "precautions": "Use purified form only.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Acorus+calamus+sweet+flag+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Acorus_calamus1.jpg/500px-Acorus_calamus1.jpg"
+  },
+  {
+    "id": 50,
+    "common_name": "Kanchanar",
+    "botanical_name": "Bauhinia variegata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Oncology"
+    ],
+    "part_used": "Bark",
+    "region": "Sub-Himalayan India",
+    "medicinal_properties": [
+      "Anti-tumor",
+      "Anti-inflammatory",
+      "Thyroid stimulant"
+    ],
+    "therapeutic_uses": [
+      "Thyroid (Goiter)",
+      "Tumors/Cysts",
+      "PCOS"
+    ],
+    "precautions": "Monitor thyroid levels.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Bauhinia+variegata+orchid+tree+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bauhinia_variegata_flower.jpg/500px-Bauhinia_variegata_flower.jpg"
+  },
+  {
+    "id": 51,
+    "common_name": "Varuna",
+    "botanical_name": "Crateva religiosa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology"
+    ],
+    "part_used": "Bark",
+    "region": "River Banks India",
+    "medicinal_properties": [
+      "Lithotriptic",
+      "Diuretic",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Kidney stones",
+      "Prostate enlargement",
+      "UTI"
+    ],
+    "precautions": "May cause dehydration.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Crateva+religiosa+sacred+garlic+pear",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Crateva_religiosa_Blanco1.176-cropped.jpg/500px-Crateva_religiosa_Blanco1.176-cropped.jpg"
+  },
+  {
+    "id": 52,
+    "common_name": "Lodhra",
+    "botanical_name": "Symplocos racemosa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gynecology",
+      "Dermatology"
+    ],
+    "part_used": "Bark",
+    "region": "Northeastern India",
+    "medicinal_properties": [
+      "Astringent",
+      "Hemostatic",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Menorrhagia",
+      "Leucorrhea",
+      "Skin acne"
+    ],
+    "precautions": "Causes constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Symplocos+racemosa+tree+bark",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Symplocos_Racemosa_06.JPG/500px-Symplocos_Racemosa_06.JPG"
+  },
+  {
+    "id": 53,
+    "common_name": "Nagarmotha (Nut Grass)",
+    "botanical_name": "Cyperus rotundus",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Dermatology"
+    ],
+    "part_used": "Tuber/Root",
+    "region": "Pan-India weed",
+    "medicinal_properties": [
+      "Digestive",
+      "Carminative",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Digestion",
+      "Fever",
+      "Obesity"
+    ],
+    "precautions": "Avoid in severe constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cyperus+rotundus+nut+grass",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Nutgrass_Cyperus_rotundus02.jpg/500px-Nutgrass_Cyperus_rotundus02.jpg"
+  },
+  {
+    "id": 54,
+    "common_name": "Vidari Kand",
+    "botanical_name": "Pueraria tuberosa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Reproductive Health",
+      "Immunology"
+    ],
+    "part_used": "Tuber",
+    "region": "India/Nepal",
+    "medicinal_properties": [
+      "Galactogogue",
+      "Aphrodisiac",
+      "Rejuvenative"
+    ],
+    "therapeutic_uses": [
+      "Weight gain",
+      "Sexual health",
+      "Lactation"
+    ],
+    "precautions": "Avoid in estrogen-sensitive conditions.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Pueraria+tuberosa+indian+kudzu",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Pueraria_tuberosa_%28Roxb._ex_Willd.%29_DC._%286926236863%29.jpg/500px-Pueraria_tuberosa_%28Roxb._ex_Willd.%29_DC._%286926236863%29.jpg"
+  },
+  {
+    "id": 55,
+    "common_name": "Kaunch Beej (Velvet Bean)",
+    "botanical_name": "Mucuna pruriens",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Reproductive Health"
+    ],
+    "part_used": "Seeds",
+    "region": "Tropical India/Africa",
+    "medicinal_properties": [
+      "Neuroprotective",
+      "Aphrodisiac",
+      "Androgenic"
+    ],
+    "therapeutic_uses": [
+      "Parkinson's disease",
+      "Male infertility",
+      "Low libido"
+    ],
+    "precautions": "Contains L-Dopa.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Mucuna+pruriens+velvet+beans",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Mucuna_pruriens_flower.jpg/500px-Mucuna_pruriens_flower.jpg"
+  },
+  {
+    "id": 57,
+    "common_name": "Balah (Country Mallow)",
+    "botanical_name": "Sida cordifolia",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Musculoskeletal"
+    ],
+    "part_used": "Root/Whole Plant",
+    "region": "Tropical Global",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Analgesic",
+      "Nervine tonic"
+    ],
+    "therapeutic_uses": [
+      "Neurological disorders",
+      "Paralysis",
+      "Arthritis"
+    ],
+    "precautions": "Avoid in heart conditions.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Sida+cordifolia+plant+mallow",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Sida_cordifolia_%28Bala%29_in_Hyderabad%2C_AP_W_IMG_9420.jpg/500px-Sida_cordifolia_%28Bala%29_in_Hyderabad%2C_AP_W_IMG_9420.jpg"
+  },
+  {
+    "id": 58,
+    "common_name": "Shallaki (Boswellia)",
+    "botanical_name": "Boswellia serrata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Gastrointestinal"
+    ],
+    "part_used": "Resin",
+    "region": "Dry Forests India",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Anti-arthritic",
+      "Analgesic"
+    ],
+    "therapeutic_uses": [
+      "Osteoarthritis",
+      "Joint pain",
+      "IBD"
+    ],
+    "precautions": "Rare allergic skin reactions.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Boswellia+serrata+indian+frankincense",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Boswellia_serrata_%28Salai%29_in_Kinnarsani_WS%2C_AP_W2_IMG_5840.jpg/500px-Boswellia_serrata_%28Salai%29_in_Kinnarsani_WS%2C_AP_W2_IMG_5840.jpg"
+  },
+  {
+    "id": 59,
+    "common_name": "Nirgundi",
+    "botanical_name": "Vitex negundo",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Dermatology"
+    ],
+    "part_used": "Leaves",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Analgesic",
+      "Anti-inflammatory",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Joint pain",
+      "Sciatica",
+      "Skin diseases"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Vitex+negundo+five+leaved+chaste+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vitex_negundo_415167855.jpg/500px-Vitex_negundo_415167855.jpg"
+  },
+  {
+    "id": 60,
+    "common_name": "Eranda (Castor)",
+    "botanical_name": "Ricinus communis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Gastrointestinal"
+    ],
+    "part_used": "Oil/Leaves",
+    "region": "Tropical Global",
+    "medicinal_properties": [
+      "Laxative",
+      "Anti-inflammatory",
+      "Analgesic"
+    ],
+    "therapeutic_uses": [
+      "Constipation",
+      "Rheumatoid arthritis",
+      "Back pain"
+    ],
+    "precautions": "Seeds are toxic.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Ricinus+communis+castor+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Ricinus_March_2010-1.jpg/500px-Ricinus_March_2010-1.jpg"
+  },
+  {
+    "id": 61,
+    "common_name": "Kumkum (Saffron)",
+    "botanical_name": "Crocus sativus",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Dermatology",
+      "Psychiatry"
+    ],
+    "part_used": "Stigma (Flower)",
+    "region": "Kashmir/Iran/Spain",
+    "medicinal_properties": [
+      "Antioxidant",
+      "Mood enhancer",
+      "Skin toner"
+    ],
+    "therapeutic_uses": [
+      "Skin complexion",
+      "Depression",
+      "Menstrual cramps"
+    ],
+    "precautions": "High doses are toxic.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Crocus+sativus+saffron+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Crocus_sativus2.jpg/500px-Crocus_sativus2.jpg"
+  },
+  {
+    "id": 62,
+    "common_name": "Chandan (Sandalwood)",
+    "botanical_name": "Santalum album",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Urology"
+    ],
+    "part_used": "Heartwood",
+    "region": "Karnataka/Tamil Nadu",
+    "medicinal_properties": [
+      "Cooling",
+      "Antiseptic",
+      "Astringent"
+    ],
+    "therapeutic_uses": [
+      "Skin glow",
+      "Acne",
+      "Burning sensation"
+    ],
+    "precautions": "Avoid internal use in kidney disease.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Santalum+album+sandalwood+logs",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Santalum_album_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-128.jpg"
+  },
+  {
+    "id": 63,
+    "common_name": "Khus (Vetiver)",
+    "botanical_name": "Chrysopogon zizanioides",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Urology"
+    ],
+    "part_used": "Roots",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Cooling",
+      "Nervine tonic",
+      "Digestive"
+    ],
+    "therapeutic_uses": [
+      "Heat stroke",
+      "Burning urine",
+      "Stress"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Chrysopogon+zizanioides+vetiver+grass",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Vetiver_grass.jpg/500px-Vetiver_grass.jpg"
+  },
+  {
+    "id": 64,
+    "common_name": "Pudina (Mint)",
+    "botanical_name": "Mentha spicata",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Leaves",
+    "region": "Global Cultivation",
+    "medicinal_properties": [
+      "Carminative",
+      "Cooling",
+      "Analgesic"
+    ],
+    "therapeutic_uses": [
+      "Indigestion",
+      "Nausea",
+      "Headache"
+    ],
+    "precautions": "Avoid in GERD.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Mentha+spicata+mint+leaves",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Minze.jpg/500px-Minze.jpg"
+  },
+  {
+    "id": 65,
+    "common_name": "Curry Leaves (Kadi Patta)",
+    "botanical_name": "Murraya koenigii",
+    "ayush_system": "Siddha",
+    "disease_category": [
+      "Endocrinology",
+      "Dermatology"
+    ],
+    "part_used": "Leaves",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Antidiabetic",
+      "Antioxidant",
+      "Hair tonic"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Hair fall",
+      "Cholesterol"
+    ],
+    "precautions": "Safe as food.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Murraya+koenigii+curry+leaves",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Curry_Trees.jpg/500px-Curry_Trees.jpg"
+  },
+  {
+    "id": 66,
+    "common_name": "Moringa (Sahijan)",
+    "botanical_name": "Moringa oleifera",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Endocrinology"
+    ],
+    "part_used": "Leaves/Pod",
+    "region": "Sub-Himalayan tracts",
+    "medicinal_properties": [
+      "Nutritive",
+      "Anti-inflammatory",
+      "Antihypertensive"
+    ],
+    "therapeutic_uses": [
+      "Malnutrition",
+      "Joint pain",
+      "Blood pressure"
+    ],
+    "precautions": "Root bark is abortifacient.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Moringa+oleifera+drumstick+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/DrumstickFlower.jpg/500px-DrumstickFlower.jpg"
+  },
+  {
+    "id": 67,
+    "common_name": "Tejpatta (Indian Bay Leaf)",
+    "botanical_name": "Cinnamomum tamala",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Leaves",
+    "region": "Himalayas",
+    "medicinal_properties": [
+      "Hypoglycemic",
+      "Digestive",
+      "Antibacterial"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Digestion",
+      "Cold/Cough"
+    ],
+    "precautions": "Monitor blood sugar levels.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cinnamomum+tamala+indian+bay+leaf",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Indian_bay_leaf_-_tejpatta_-_indisches_Lorbeerblatt.jpg/500px-Indian_bay_leaf_-_tejpatta_-_indisches_Lorbeerblatt.jpg"
+  },
+  {
+    "id": 68,
+    "common_name": "Methi (Fenugreek)",
+    "botanical_name": "Trigonella foenum-graecum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Musculoskeletal"
+    ],
+    "part_used": "Seeds",
+    "region": "North India",
+    "medicinal_properties": [
+      "Hypoglycemic",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Arthritis",
+      "Lactation"
+    ],
+    "precautions": "May cause diarrhea.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Trigonella+foenum-graecum+fenugreek+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Illustration_Trigonella_foenum-graecum0_clean.jpg/500px-Illustration_Trigonella_foenum-graecum0_clean.jpg"
+  },
+  {
+    "id": 69,
+    "common_name": "Nagkesar",
+    "botanical_name": "Mesua ferrea",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gynecology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Flower Stamens",
+    "region": "Eastern Himalayas/Western Ghats",
+    "medicinal_properties": [
+      "Hemostatic",
+      "Astringent",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Bleeding piles",
+      "Heavy menstruation",
+      "Skin issues"
+    ],
+    "precautions": "May cause constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Mesua+ferrea+cobra+saffron+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Mesua_ferrea_at_Kepong_Botanical_Garden_20230625_111956.jpg/500px-Mesua_ferrea_at_Kepong_Botanical_Garden_20230625_111956.jpg"
+  },
+  {
+    "id": 70,
+    "common_name": "Pushkarmool",
+    "botanical_name": "Inula racemosa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory",
+      "Cardiology"
+    ],
+    "part_used": "Roots",
+    "region": "Western Himalayas",
+    "medicinal_properties": [
+      "Bronchodilator",
+      "Cardioprotective",
+      "Expectorant"
+    ],
+    "therapeutic_uses": [
+      "Asthma",
+      "Chest pain (Angina)",
+      "Cough"
+    ],
+    "precautions": "Avoid if allergic to Asteraceae.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Inula+racemosa+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Inula_racemosa.jpg/500px-Inula_racemosa.jpg"
+  },
+  {
+    "id": 71,
+    "common_name": "Ativisha",
+    "botanical_name": "Aconitum heterophyllum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Pediatrics",
+      "Gastrointestinal"
+    ],
+    "part_used": "Tuberous Root",
+    "region": "Alpine Himalayas",
+    "medicinal_properties": [
+      "Antipyretic",
+      "Digestive",
+      "Antidiarrheal"
+    ],
+    "therapeutic_uses": [
+      "Fever in children",
+      "Diarrhea",
+      "Vomiting"
+    ],
+    "precautions": "Use strictly under medical supervision.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Aconitum+heterophyllum+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/AconitumRoyle.jpg/500px-AconitumRoyle.jpg"
+  },
+  {
+    "id": 72,
+    "common_name": "Kutaj",
+    "botanical_name": "Holarrhena antidysenterica",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Bark",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Antidysenteric",
+      "Astringent",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Dysentery",
+      "IBS",
+      "Diarrhea"
+    ],
+    "precautions": "Avoid in constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Holarrhena+antidysenterica+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Wrightia_antidysenterica_photographed_by_Trisorn_Triboon.jpg/500px-Wrightia_antidysenterica_photographed_by_Trisorn_Triboon.jpg"
+  },
+  {
+    "id": 73,
+    "common_name": "Patha",
+    "botanical_name": "Cissampelos pareira",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gynecology",
+      "Dermatology"
+    ],
+    "part_used": "Roots/Leaves",
+    "region": "Tropical Global/India",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Diuretic",
+      "Analgesic"
+    ],
+    "therapeutic_uses": [
+      "Menstrual disorders",
+      "Wound healing",
+      "Skin ulcers"
+    ],
+    "precautions": "Consult physician for dosage.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cissampelos+pareira+velvet+leaf+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cissampelos_pareira_NP.JPG/500px-Cissampelos_pareira_NP.JPG"
+  },
+  {
+    "id": 74,
+    "common_name": "Rasna",
+    "botanical_name": "Pluchea lanceolata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal"
+    ],
+    "part_used": "Leaves",
+    "region": "Dry Gangetic Plains",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Analgesic",
+      "Anti-arthritic"
+    ],
+    "therapeutic_uses": [
+      "Arthritis",
+      "Joint pain",
+      "Sciatica"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Pluchea+lanceolata+rasna+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Inula_helenium_JRVdH_02.jpg"
+  },
+  {
+    "id": 75,
+    "common_name": "Apamarga",
+    "botanical_name": "Achyranthes aspera",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Whole Plant/Seeds",
+    "region": "Pan-India weed",
+    "medicinal_properties": [
+      "Diuretic",
+      "Lithotriptic",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Kidney stones",
+      "Piles",
+      "Wounds"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Achyranthes+aspera+prickly+chaff+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Achyranthes_aspera_at_Kadavoor.jpg/500px-Achyranthes_aspera_at_Kadavoor.jpg"
+  },
+  {
+    "id": 76,
+    "common_name": "Pashanbhed",
+    "botanical_name": "Bergenia ciliata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology"
+    ],
+    "part_used": "Rhizome",
+    "region": "Temperate Himalayas",
+    "medicinal_properties": [
+      "Lithotriptic",
+      "Diuretic",
+      "Antipyretic"
+    ],
+    "therapeutic_uses": [
+      "Dissolving Kidney stones",
+      "Urinary issues",
+      "Fever"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Bergenia+ciliata+rock+foil+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Bergenia_ciliata_%28Haw.%29_Sternb._f._ligulata_%28Yeo%29_%28Saxifragaceae%29_plant.jpg/500px-Bergenia_ciliata_%28Haw.%29_Sternb._f._ligulata_%28Yeo%29_%28Saxifragaceae%29_plant.jpg"
+  },
+  {
+    "id": 78,
+    "common_name": "Talishpatra",
+    "botanical_name": "Abies webbiana",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory"
+    ],
+    "part_used": "Leaves",
+    "region": "Himalayas",
+    "medicinal_properties": [
+      "Expectorant",
+      "Bronchodilator",
+      "Antispasmodic"
+    ],
+    "therapeutic_uses": [
+      "Cough",
+      "Asthma",
+      "Chronic bronchitis"
+    ],
+    "precautions": "Excess may cause heartburn.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Abies+webbiana+himalayan+silver+fir",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Abies_spectabilis_Namche_Bazaar.jpg/500px-Abies_spectabilis_Namche_Bazaar.jpg"
+  },
+  {
+    "id": 79,
+    "common_name": "Karpura (Camphor)",
+    "botanical_name": "Cinnamomum camphora",
+    "ayush_system": "Siddha",
+    "disease_category": [
+      "Musculoskeletal",
+      "Respiratory"
+    ],
+    "part_used": "Crystalline Extract",
+    "region": "East Asia/Introduced India",
+    "medicinal_properties": [
+      "Analgesic (Topical)",
+      "Antiseptic",
+      "Decongestant"
+    ],
+    "therapeutic_uses": [
+      "Joint pain (topical)",
+      "Chest congestion",
+      "Itching"
+    ],
+    "precautions": "Toxic if ingested in large amounts.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cinnamomum+camphora+camphor+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cinnamomum_camphora20050314.jpg"
+  },
+  {
+    "id": 80,
+    "common_name": "Dhataki",
+    "botanical_name": "Woodfordia fruticosa",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Gynecology"
+    ],
+    "part_used": "Flowers",
+    "region": "North India",
+    "medicinal_properties": [
+      "Astringent",
+      "Antimicrobial",
+      "Fermenting agent"
+    ],
+    "therapeutic_uses": [
+      "Diarrhea",
+      "Menorrhagia",
+      "Dysentery"
+    ],
+    "precautions": "Avoid in constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Woodfordia+fruticosa+fire+flame+bush",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Woodfordia_fruticosa.jpg/500px-Woodfordia_fruticosa.jpg"
+  },
+  {
+    "id": 81,
+    "common_name": "Gambhari",
+    "botanical_name": "Gmelina arborea",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Immunology"
+    ],
+    "part_used": "Root/Fruit",
+    "region": "Deciduous Forests India",
+    "medicinal_properties": [
+      "Nervine tonic",
+      "Anti-inflammatory",
+      "Digestive"
+    ],
+    "therapeutic_uses": [
+      "General weakness",
+      "Fever",
+      "Thirst"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Gmelina+arborea+beechwood+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Gamhar.jpg"
+  },
+  {
+    "id": 82,
+    "common_name": "Shyonak",
+    "botanical_name": "Oroxylum indicum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Gastrointestinal"
+    ],
+    "part_used": "Root Bark",
+    "region": "Tropical Forests India",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Diuretic",
+      "Astringent"
+    ],
+    "therapeutic_uses": [
+      "Arthritis",
+      "Diarrhea",
+      "Cough"
+    ],
+    "precautions": "Consult physician for pregnancy use.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Oroxylum+indicum+broken+bones+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oroxylum_indicum_01.jpg/500px-Oroxylum_indicum_01.jpg"
+  },
+  {
+    "id": 83,
+    "common_name": "Patala",
+    "botanical_name": "Stereospermum suaveolens",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Root Bark",
+    "region": "Moist Forests India",
+    "medicinal_properties": [
+      "Diuretic",
+      "Cardioprotective",
+      "Cooling"
+    ],
+    "therapeutic_uses": [
+      "Edema",
+      "Urinary disorders",
+      "Acid reflux"
+    ],
+    "precautions": "No known major side effects.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Stereospermum+suaveolens+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Stereospermum_chelonoides_Parul_%C2%A9Md_Sharif_Hossain_Sourav_.jpg/500px-Stereospermum_chelonoides_Parul_%C2%A9Md_Sharif_Hossain_Sourav_.jpg"
+  },
+  {
+    "id": 84,
+    "common_name": "Agnimantha",
+    "botanical_name": "Clerodendrum phlomidis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Neurology"
+    ],
+    "part_used": "Root/Leaves",
+    "region": "Dry Plains India",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Analgesic",
+      "Lipolytic"
+    ],
+    "therapeutic_uses": [
+      "Obesity",
+      "Neuralgia",
+      "Rheumatism"
+    ],
+    "precautions": "Monitor blood sugar levels.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Clerodendrum+phlomidis+agnimantha+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Arni_%28Clerodendrum_phlomidis%29_at_Sindhrot_near_Vadodara%2C_Gujrat_Pix_048.jpg/500px-Arni_%28Clerodendrum_phlomidis%29_at_Sindhrot_near_Vadodara%2C_Gujrat_Pix_048.jpg"
+  },
+  {
+    "id": 85,
+    "common_name": "Prishniparni",
+    "botanical_name": "Uraria picta",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Infectious Disease"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Dry Grasslands India",
+    "medicinal_properties": [
+      "Fracture healing",
+      "Anti-inflammatory",
+      "Anti-diarrheal"
+    ],
+    "therapeutic_uses": [
+      "Fractures",
+      "Fever",
+      "Diarrhea"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Uraria+picta+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Uraria_picta_108395543.jpg/500px-Uraria_picta_108395543.jpg"
+  },
+  {
+    "id": 86,
+    "common_name": "Shalaparni",
+    "botanical_name": "Desmodium gangeticum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Neurology",
+      "Infectious Disease"
+    ],
+    "part_used": "Roots",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Nervine tonic",
+      "Aphrodisiac",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Nervous disorders",
+      "Fever",
+      "Asthma"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Desmodium+gangeticum+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Desmodium_gangeticum.jpg"
+  },
+  {
+    "id": 87,
+    "common_name": "Brihati",
+    "botanical_name": "Solanum indicum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory",
+      "Gastrointestinal"
+    ],
+    "part_used": "Root/Fruit",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Digestive",
+      "Anti-inflammatory",
+      "Cardioprotective"
+    ],
+    "therapeutic_uses": [
+      "Asthma",
+      "Cough",
+      "Colic pain"
+    ],
+    "precautions": "Raw fruit is not edible.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Solanum+indicum+poison+berry",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/5/5f/Disambig_gray.svg"
+  },
+  {
+    "id": 88,
+    "common_name": "Kantakari",
+    "botanical_name": "Solanum virginianum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Respiratory"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Wastelands India",
+    "medicinal_properties": [
+      "Expectorant",
+      "Bronchodilator",
+      "Diuretic"
+    ],
+    "therapeutic_uses": [
+      "Asthma",
+      "Cough",
+      "Throat infection"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Solanum+virginianum+yellow+fruit+nightshade",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Solanum_Xanthocarpum.jpg/500px-Solanum_Xanthocarpum.jpg"
+  },
+  {
+    "id": 89,
+    "common_name": "Sarasparilla (Anantamul)",
+    "botanical_name": "Hemidesmus indicus",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Urology"
+    ],
+    "part_used": "Roots",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Blood Purifier",
+      "Cooling",
+      "Demulcent"
+    ],
+    "therapeutic_uses": [
+      "Skin diseases",
+      "Burning sensation",
+      "Detox"
+    ],
+    "precautions": "May increase absorption of other drugs.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Hemidesmus+indicus+indian+sarsaparilla",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hemidesmus_scandens.jpg/500px-Hemidesmus_scandens.jpg"
+  },
+  {
+    "id": 90,
+    "common_name": "Daruharidra (Tree Turmeric)",
+    "botanical_name": "Berberis aristata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Ophthalmology",
+      "Hepatology",
+      "Endocrinology"
+    ],
+    "part_used": "Stem/Root",
+    "region": "Himalayas",
+    "medicinal_properties": [
+      "Hepatoprotective",
+      "Antimicrobial",
+      "Hypoglycemic"
+    ],
+    "therapeutic_uses": [
+      "Eye infections",
+      "Liver issues",
+      "Diabetes"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Berberis+aristata+indian+barberry",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/BerberisAculeata.jpg/500px-BerberisAculeata.jpg"
+  },
+  {
+    "id": 91,
+    "common_name": "Harsingar (Parijat)",
+    "botanical_name": "Nyctanthes arbor-tristis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Infectious Disease"
+    ],
+    "part_used": "Leaves/Flowers",
+    "region": "Sub-Himalayan Tract/Gardens",
+    "medicinal_properties": [
+      "Anti-arthritic",
+      "Antipyretic",
+      "Immunomodulatory"
+    ],
+    "therapeutic_uses": [
+      "Sciatica",
+      "Arthritis",
+      "Fever (Malaria/Dengue)"
+    ],
+    "precautions": "Can cause nausea.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Nyctanthes+arbor-tristis+night+flowering+jasmine",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Shiuli_phool_-_panoramio.jpg/500px-Shiuli_phool_-_panoramio.jpg"
+  },
+  {
+    "id": 92,
+    "common_name": "Vijaysar",
+    "botanical_name": "Pterocarpus marsupium",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Dermatology"
+    ],
+    "part_used": "Heartwood",
+    "region": "Hilly Regions India",
+    "medicinal_properties": [
+      "Antidiabetic",
+      "Astringent",
+      "Anti-obesity"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Obesity",
+      "Skin issues"
+    ],
+    "precautions": "Monitor blood sugar closely.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Pterocarpus+marsupium+indian+kino+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Pterocarpus_marsupium_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-252.jpg"
+  },
+  {
+    "id": 93,
+    "common_name": "Bakuchi",
+    "botanical_name": "Psoralea corylifolia",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology"
+    ],
+    "part_used": "Seeds",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Photosensitizer",
+      "Antifungal",
+      "Anthelminthic"
+    ],
+    "therapeutic_uses": [
+      "Vitiligo (Leucoderma)",
+      "Psoriasis",
+      "Skin fungal infection"
+    ],
+    "precautions": "Causes blistering/sunburn if skin is exposed.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Psoralea+corylifolia+plant+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Psoralea_corylifolia_-_Agri-Horticultural_Society_of_India_-_Alipore_-_Kolkata_2013-01-05_2282.JPG"
+  },
+  {
+    "id": 99,
+    "common_name": "Chirchita (Prickly Chaff Flower)",
+    "botanical_name": "Achyranthes aspera",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Roadside Weed India",
+    "medicinal_properties": [
+      "Diuretic",
+      "Anti-inflammatory",
+      "Digestive"
+    ],
+    "therapeutic_uses": [
+      "Piles",
+      "Renal calculi",
+      "Ascites"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Achyranthes+aspera+plant+spikes",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Achyranthes_aspera.jpg"
+  },
+  {
+    "id": 100,
+    "common_name": "Shatapushpa (Dill)",
+    "botanical_name": "Anethum graveolens",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Gynecology"
+    ],
+    "part_used": "Seeds",
+    "region": "Cultivated Global",
+    "medicinal_properties": [
+      "Carminative",
+      "Emmenagogue",
+      "Galactogogue"
+    ],
+    "therapeutic_uses": [
+      "Digestive gas",
+      "Menstrual pain",
+      "Lactation"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Anethum+graveolens+dill+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Illustration_Anethum_graveolens_clean.jpg/500px-Illustration_Anethum_graveolens_clean.jpg"
+  },
+  {
+    "id": 101,
+    "common_name": "Arnica",
+    "botanical_name": "Arnica montana",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Musculoskeletal",
+      "Trauma",
+      "Dermatology"
+    ],
+    "part_used": "Flowers",
+    "region": "Europe/Cultivated Global",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Analgesic",
+      "Antiseptic"
+    ],
+    "therapeutic_uses": [
+      "Bruises",
+      "Muscle soreness",
+      "Trauma/Shock"
+    ],
+    "precautions": "Do not use on open wounds; toxic if ingested raw.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Arnica+montana+yellow+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arnica_montana_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-015.jpg/500px-Arnica_montana_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-015.jpg"
+  },
+  {
+    "id": 102,
+    "common_name": "Calendula (Marigold)",
+    "botanical_name": "Calendula officinalis",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Dermatology",
+      "Infectious Disease"
+    ],
+    "part_used": "Flowers",
+    "region": "Mediterranean",
+    "medicinal_properties": [
+      "Antiseptic",
+      "Wound healing",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Cuts and burns",
+      "Eczema",
+      "Wound healing"
+    ],
+    "precautions": "May cause allergic reaction in sensitive individuals.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Calendula+officinalis+orange+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Calendula_officinalis%2C_pot_marigold.JPG/500px-Calendula_officinalis%2C_pot_marigold.JPG"
+  },
+  {
+    "id": 103,
+    "common_name": "Nux Vomica (Poison Nut)",
+    "botanical_name": "Strychnos nux-vomica",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Gastrointestinal",
+      "Neurology"
+    ],
+    "part_used": "Seeds",
+    "region": "Southeast Asia/India",
+    "medicinal_properties": [
+      "Stimulant",
+      "Digestive",
+      "Nervine"
+    ],
+    "therapeutic_uses": [
+      "Digestive issues",
+      "Hangover",
+      "Irritability"
+    ],
+    "precautions": "Highly toxic in crude form; use only in homeopathic dilution.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Strychnos+nux-vomica+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Strychnos_nux-vomica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-266.jpg/500px-Strychnos_nux-vomica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-266.jpg"
+  },
+  {
+    "id": 108,
+    "common_name": "Lavender (Ustukhuddus)",
+    "botanical_name": "Lavandula stoechas",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Neurology",
+      "Psychiatry"
+    ],
+    "part_used": "Flowers",
+    "region": "Mediterranean/India",
+    "medicinal_properties": [
+      "Brain Tonic",
+      "Sedative",
+      "Antidepressant"
+    ],
+    "therapeutic_uses": [
+      "Migraine",
+      "Depression",
+      "Memory loss"
+    ],
+    "precautions": "Can cause drowsiness.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Lavandula+stoechas+french+lavender",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Lavandula-stoechas-habitat2.JPG"
+  },
+  {
+    "id": 110,
+    "common_name": "Echinacea",
+    "botanical_name": "Echinacea purpurea",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Immunology",
+      "Infectious Disease"
+    ],
+    "part_used": "Root/Flower",
+    "region": "North America/Global",
+    "medicinal_properties": [
+      "Immunostimulant",
+      "Antiviral",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Common cold",
+      "Flu",
+      "Immunity boosting"
+    ],
+    "precautions": "Avoid in autoimmune disorders.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Echinacea+purpurea+purple+coneflower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Echinacea_purpurea.JPG"
+  },
+  {
+    "id": 113,
+    "common_name": "Rhus Tox (Poison Ivy)",
+    "botanical_name": "Toxicodendron pubescens",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Musculoskeletal",
+      "Dermatology"
+    ],
+    "part_used": "Leaves",
+    "region": "North America",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Anti-rheumatic"
+    ],
+    "therapeutic_uses": [
+      "Joint pain",
+      "Back pain",
+      "Skin rashes"
+    ],
+    "precautions": "Causes severe rash in crude form.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Toxicodendron+pubescens+poison+ivy",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Status_TNC_G5.svg"
+  },
+  {
+    "id": 115,
+    "common_name": "Ispaghol (Psyllium)",
+    "botanical_name": "Plantago ovata",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal"
+    ],
+    "part_used": "Seed Husk",
+    "region": "West Asia/India",
+    "medicinal_properties": [
+      "Laxative",
+      "Demulcent"
+    ],
+    "therapeutic_uses": [
+      "Constipation",
+      "Dysentery",
+      "Acidity"
+    ],
+    "precautions": "Drink plenty of water.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Plantago+ovata+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg"
+  },
+  {
+    "id": 120,
+    "common_name": "Kalonji (Black Seed)",
+    "botanical_name": "Nigella sativa",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Immunology",
+      "Respiratory",
+      "Gastrointestinal"
+    ],
+    "part_used": "Seeds",
+    "region": "South West Asia",
+    "medicinal_properties": [
+      "Immunomodulatory",
+      "Bronchodilator",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Immunity boosting",
+      "Asthma",
+      "Indigestion"
+    ],
+    "precautions": "Safe in culinary amounts.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Nigella+sativa+black+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Nigella_sativa_MHNT.BOT.2015.34.22.jpg"
+  },
+  {
+    "id": 125,
+    "common_name": "Karpuravalli (Mexican Mint)",
+    "botanical_name": "Plectranthus amboinicus",
+    "ayush_system": "Siddha",
+    "disease_category": [
+      "Respiratory"
+    ],
+    "part_used": "Leaves",
+    "region": "South India",
+    "medicinal_properties": [
+      "Expectorant",
+      "Antimicrobial"
+    ],
+    "therapeutic_uses": [
+      "Cough",
+      "Cold",
+      "Sore throat"
+    ],
+    "precautions": "Strong flavor/aroma.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Plectranthus+amboinicus+succulent+leaves",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Cuban_Oregano_Flowers.png"
+  },
+  {
+    "id": 128,
+    "common_name": "Kuppaimeni",
+    "botanical_name": "Acalypha indica",
+    "ayush_system": "Siddha",
+    "disease_category": [
+      "Dermatology",
+      "Respiratory"
+    ],
+    "part_used": "Leaves",
+    "region": "Roadside Weed India",
+    "medicinal_properties": [
+      "Antifungal",
+      "Expectorant",
+      "Emetic"
+    ],
+    "therapeutic_uses": [
+      "Skin ringworm",
+      "Eczema",
+      "Cold"
+    ],
+    "precautions": "Emetic in large doses (causes vomiting).",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Acalypha+indica+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Acalypha_indica_at_beliatore_west_bengal.jpg"
+  },
+  {
+    "id": 133,
+    "common_name": "Vat (Banyan)",
+    "botanical_name": "Ficus benghalensis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Endocrinology",
+      "Musculoskeletal"
+    ],
+    "part_used": "Bark/Aerial Roots",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Astringent",
+      "Anti-diabetic",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Diabetes",
+      "Joint pain",
+      "Hair fall"
+    ],
+    "precautions": "Extracts are strong astringents.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Ficus+benghalensis+banyan+tree+roots",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Banyantree.jpg"
+  },
+  {
+    "id": 137,
+    "common_name": "Ashoka",
+    "botanical_name": "Saraca asoca",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gynecology"
+    ],
+    "part_used": "Bark",
+    "region": "Rainforests India",
+    "medicinal_properties": [
+      "Uterine Tonic",
+      "Astringent",
+      "Hemostatic"
+    ],
+    "therapeutic_uses": [
+      "Menstrual disorders",
+      "PCOS",
+      "Uterine bleeding"
+    ],
+    "precautions": "Avoid during menstruation (hemostatic).",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Saraca+asoca+ashoka+tree+flowers",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg"
+  },
+  {
+    "id": 139,
+    "common_name": "Patharchatta",
+    "botanical_name": "Bryophyllum pinnatum",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology"
+    ],
+    "part_used": "Leaves",
+    "region": "Gardens/Wild",
+    "medicinal_properties": [
+      "Lithotriptic",
+      "Diuretic"
+    ],
+    "therapeutic_uses": [
+      "Kidney stones",
+      "Urinary retention"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Bryophyllum+pinnatum+leaf",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Kalanchoe_pinnata_%28Flower%29.jpg"
+  },
+  {
+    "id": 141,
+    "common_name": "China (Cinchona)",
+    "botanical_name": "Cinchona officinalis",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Infectious Disease",
+      "Gastrointestinal"
+    ],
+    "part_used": "Bark",
+    "region": "South America/India",
+    "medicinal_properties": [
+      "Antipyretic",
+      "Bitter Tonic"
+    ],
+    "therapeutic_uses": [
+      "Malaria",
+      "Weakness",
+      "Fluid loss"
+    ],
+    "precautions": "High doses cause Cinchonism (ringing ears).",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cinchona+officinalis+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_edit-ltr.svg"
+  },
+  {
+    "id": 143,
+    "common_name": "Pulsatilla",
+    "botanical_name": "Pulsatilla nigricans",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Gynecology",
+      "Respiratory"
+    ],
+    "part_used": "Whole Plant",
+    "region": "Europe",
+    "medicinal_properties": [
+      "Sedative",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Menstrual issues",
+      "Colds with thick discharge"
+    ],
+    "precautions": "Fresh plant is irritating.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Pulsatilla+nigricans+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Pulsatilla_pratensis_ssp_hungarica.jpg"
+  },
+  {
+    "id": 146,
+    "common_name": "Thuja",
+    "botanical_name": "Thuja occidentalis",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Dermatology"
+    ],
+    "part_used": "Leaves/Twigs",
+    "region": "North America",
+    "medicinal_properties": [
+      "Antiviral",
+      "Immuno-stimulant"
+    ],
+    "therapeutic_uses": [
+      "Warts",
+      "Skin tags",
+      "Vaccination side effects"
+    ],
+    "precautions": "Oil is neurotoxic in large amounts.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Thuja+occidentalis+arborvitae",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg"
+  },
+  {
+    "id": 147,
+    "common_name": "Lycopodium",
+    "botanical_name": "Lycopodium clavatum",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Gastrointestinal",
+      "Hepatology"
+    ],
+    "part_used": "Spores",
+    "region": "Global",
+    "medicinal_properties": [
+      "Carminative",
+      "Hepatic tonic"
+    ],
+    "therapeutic_uses": [
+      "Bloating",
+      "Liver issues",
+      "Kidney stones"
+    ],
+    "precautions": "Spores are flammable.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Lycopodium+clavatum+clubmoss",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/LycopodiumClavatum.jpg"
+  },
+  {
+    "id": 148,
+    "common_name": "Berberis (Barberry)",
+    "botanical_name": "Berberis vulgaris",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Urology",
+      "Musculoskeletal"
+    ],
+    "part_used": "Bark",
+    "region": "Europe/Asia",
+    "medicinal_properties": [
+      "Lithotriptic",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Kidney stones",
+      "Gallstones",
+      "Back pain"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Berberis+vulgaris+barberry+bush",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Berberis-vulgaris-flowers.jpg"
+  },
+  {
+    "id": 149,
+    "common_name": "Phytolacca",
+    "botanical_name": "Phytolacca decandra",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Endocrinology",
+      "Otolaryngology (ENT)"
+    ],
+    "part_used": "Root/Berries",
+    "region": "North America",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Lymphatic stimulant"
+    ],
+    "therapeutic_uses": [
+      "Tonsillitis",
+      "Glandular swelling",
+      "Weight loss"
+    ],
+    "precautions": "Toxic in crude form.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Phytolacca+decandra+pokeweed",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pokeweed_bush_in_Northumberland_County%2C_Pennsylvania.JPG/500px-Pokeweed_bush_in_Northumberland_County%2C_Pennsylvania.JPG"
+  },
+  {
+    "id": 150,
+    "common_name": "Gelsemium",
+    "botanical_name": "Gelsemium sempervirens",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Neurology",
+      "Infectious Disease"
+    ],
+    "part_used": "Root",
+    "region": "North America",
+    "medicinal_properties": [
+      "Sedative",
+      "Analgesic"
+    ],
+    "therapeutic_uses": [
+      "Flu weakness",
+      "Performance anxiety",
+      "Headache"
+    ],
+    "precautions": "Toxic; depressant.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Gelsemium+sempervirens+yellow+jasmine",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Gelsemium_sempervirens3.jpg/500px-Gelsemium_sempervirens3.jpg"
+  },
+  {
+    "id": 151,
+    "common_name": "Ignatia",
+    "botanical_name": "Strychnos ignatii",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Psychiatry"
+    ],
+    "part_used": "Bean",
+    "region": "Philippines",
+    "medicinal_properties": [
+      "Sedative",
+      "Antispasmodic"
+    ],
+    "therapeutic_uses": [
+      "Grief",
+      "Emotional shock",
+      "Hysteria"
+    ],
+    "precautions": "Contains strychnine; toxic.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Strychnos+ignatii+ignatius+bean",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Strychnos_ignatii_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-132.jpg/500px-Strychnos_ignatii_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-132.jpg"
+  },
+  {
+    "id": 153,
+    "common_name": "Sanguinaria (Bloodroot)",
+    "botanical_name": "Sanguinaria canadensis",
+    "ayush_system": "Homeopathy",
+    "disease_category": [
+      "Neurology",
+      "Respiratory"
+    ],
+    "part_used": "Rhizome",
+    "region": "North America",
+    "medicinal_properties": [
+      "Escharotic",
+      "Expectorant"
+    ],
+    "therapeutic_uses": [
+      "Right-sided migraine",
+      "Nasal polyps"
+    ],
+    "precautions": "Toxic; causes skin burns.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Sanguinaria+canadensis+bloodroot",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Bloodroot_closeup.JPG"
+  },
+  {
+    "id": 157,
+    "common_name": "Mako (Black Nightshade)",
+    "botanical_name": "Solanum nigrum",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Hepatology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Fruit/Leaves",
+    "region": "Global Weed",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Hepatoprotective"
+    ],
+    "therapeutic_uses": [
+      "Liver inflammation",
+      "Dropsy",
+      "Stomach ulcers"
+    ],
+    "precautions": "Unripe green berries are toxic.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Solanum+nigrum+black+nightshade",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Leaf_1_web.jpg"
+  },
+  {
+    "id": 163,
+    "common_name": "Gul-e-Nilofar (Water Lily)",
+    "botanical_name": "Nymphaea alba",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Cardiology",
+      "Psychiatry"
+    ],
+    "part_used": "Flower",
+    "region": "Ponds India",
+    "medicinal_properties": [
+      "Cooling",
+      "Sedative",
+      "Cardiotonic"
+    ],
+    "therapeutic_uses": [
+      "Palpitations",
+      "Heat stroke",
+      "Insomnia"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Nymphaea+alba+white+water+lily",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg"
+  },
+  {
+    "id": 165,
+    "common_name": "Badam (Almond)",
+    "botanical_name": "Prunus amygdalus",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Neurology",
+      "Nutritional"
+    ],
+    "part_used": "Nut/Oil",
+    "region": "Kashmir/Global",
+    "medicinal_properties": [
+      "Nutritive",
+      "Nervine Tonic",
+      "Laxative (Oil)"
+    ],
+    "therapeutic_uses": [
+      "Brain health",
+      "Constipation",
+      "Skin health"
+    ],
+    "precautions": "Bitter almonds contain cyanide (toxic).",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Prunus+amygdalus+almond+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Almond_tree_in_blossom_%28Israel%29.jpg"
+  },
+  {
+    "id": 167,
+    "common_name": "Munaqqa (Grape)",
+    "botanical_name": "Vitis vinifera",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Gastrointestinal",
+      "Hematology"
+    ],
+    "part_used": "Dried Fruit",
+    "region": "Global",
+    "medicinal_properties": [
+      "Laxative",
+      "Blood Builder",
+      "Cooling"
+    ],
+    "therapeutic_uses": [
+      "Constipation",
+      "Anemia",
+      "Weakness"
+    ],
+    "precautions": "High sugar content.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Vitis+vinifera+grapes",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Cup_vintage_Cdm_Paris_320_n4.jpg"
+  },
+  {
+    "id": 169,
+    "common_name": "Jaiphal (Nutmeg)",
+    "botanical_name": "Myristica fragrans",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Neurology"
+    ],
+    "part_used": "Seed",
+    "region": "South India/Spices",
+    "medicinal_properties": [
+      "Sedative",
+      "Carminative",
+      "Astringent"
+    ],
+    "therapeutic_uses": [
+      "Insomnia",
+      "Diarrhea",
+      "Indigestion"
+    ],
+    "precautions": "High doses are hallucinogenic/toxic.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Myristica+fragrans+nutmeg",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Myristica_Fragrans_-_%E0%B4%9C%E0%B4%BE%E0%B4%A4%E0%B4%BF%E0%B4%AE%E0%B4%B0%E0%B4%82.JPG"
+  },
+  {
+    "id": 173,
+    "common_name": "Sarson (Mustard)",
+    "botanical_name": "Brassica nigra",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Respiratory"
+    ],
+    "part_used": "Seeds/Oil",
+    "region": "North India",
+    "medicinal_properties": [
+      "Rubefacient",
+      "Heating",
+      "Stimulant"
+    ],
+    "therapeutic_uses": [
+      "Joint pain (Oil)",
+      "Congestion",
+      "Skin infections"
+    ],
+    "precautions": "Can blister skin if left too long.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Brassica+nigra+black+mustard",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Brassica_nigra_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-170.jpg"
+  },
+  {
+    "id": 177,
+    "common_name": "Nariyal (Coconut)",
+    "botanical_name": "Cocos nucifera",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Dermatology"
+    ],
+    "part_used": "Water/Oil/Fruit",
+    "region": "Coastal India",
+    "medicinal_properties": [
+      "Cooling",
+      "Nutritive",
+      "Diuretic"
+    ],
+    "therapeutic_uses": [
+      "Dehydration",
+      "Hair growth",
+      "Acid reflux"
+    ],
+    "precautions": "Oil is high in saturated fat.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Cocos+nucifera+coconut",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Brokencoconut.jpg"
+  },
+  {
+    "id": 180,
+    "common_name": "Gulab (Rose)",
+    "botanical_name": "Rosa damascena",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Ophthalmology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Petals",
+    "region": "North India",
+    "medicinal_properties": [
+      "Cooling",
+      "Mild Laxative",
+      "Astringent"
+    ],
+    "therapeutic_uses": [
+      "Eye wash",
+      "Constipation (Gulkand)",
+      "Acidity"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Rosa+damascena+damask+rose",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_edit-ltr.svg"
+  },
+  {
+    "id": 182,
+    "common_name": "Rosemary",
+    "botanical_name": "Rosmarinus officinalis",
+    "ayush_system": "Naturopathy",
+    "disease_category": [
+      "Neurology",
+      "Dermatology"
+    ],
+    "part_used": "Leaves",
+    "region": "Mediterranean",
+    "medicinal_properties": [
+      "Memory enhancer",
+      "Circulatory stimulant"
+    ],
+    "therapeutic_uses": [
+      "Memory focus",
+      "Hair growth",
+      "Low blood pressure"
+    ],
+    "precautions": "Avoid large doses in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Rosmarinus+officinalis+rosemary",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/9/99/Question_book-new.svg"
+  },
+  {
+    "id": 184,
+    "common_name": "Oregano",
+    "botanical_name": "Origanum vulgare",
+    "ayush_system": "Naturopathy",
+    "disease_category": [
+      "Infectious Disease",
+      "Gastrointestinal"
+    ],
+    "part_used": "Leaves",
+    "region": "Mediterranean",
+    "medicinal_properties": [
+      "Antimicrobial",
+      "Antifungal"
+    ],
+    "therapeutic_uses": [
+      "Stomach bugs",
+      "Fungal infections",
+      "Immunity"
+    ],
+    "precautions": "Oil causes skin burning if undiluted.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Origanum+vulgare+oregano",
+    "new_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/Commons-logo.svg"
+  },
+  {
+    "id": 186,
+    "common_name": "Ajmoda (Celery)",
+    "botanical_name": "Apium graveolens",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Musculoskeletal",
+      "Gastrointestinal"
+    ],
+    "part_used": "Seeds",
+    "region": "Himalayas",
+    "medicinal_properties": [
+      "Anti-inflammatory",
+      "Diuretic"
+    ],
+    "therapeutic_uses": [
+      "Gout",
+      "Arthritis",
+      "Indigestion"
+    ],
+    "precautions": "Avoid in pregnancy.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Apium+graveolens+celery+seeds",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/C%C3%A9leri_%C3%A0_couper0405.jpg"
+  },
+  {
+    "id": 188,
+    "common_name": "Amada (Mango Ginger)",
+    "botanical_name": "Curcuma amada",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology",
+      "Gastrointestinal"
+    ],
+    "part_used": "Rhizome",
+    "region": "South India",
+    "medicinal_properties": [
+      "Carminative",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Skin itching",
+      "Indigestion",
+      "Acne"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Curcuma+amada+mango+ginger",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Heliconia_aurantiaca3.jpg"
+  },
+  {
+    "id": 191,
+    "common_name": "Kabab Chini (Cubeb)",
+    "botanical_name": "Piper cubeba",
+    "ayush_system": "Unani",
+    "disease_category": [
+      "Urology",
+      "Respiratory"
+    ],
+    "part_used": "Fruit",
+    "region": "Java/India",
+    "medicinal_properties": [
+      "Diuretic",
+      "Antiseptic",
+      "Expectorant"
+    ],
+    "therapeutic_uses": [
+      "Urinary infection",
+      "Throat infection",
+      "Cough"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Piper+cubeba+cubeb+pepper",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/OOjs_UI_icon_edit-ltr.svg"
+  },
+  {
+    "id": 192,
+    "common_name": "Raktachandan (Red Sandalwood)",
+    "botanical_name": "Pterocarpus santalinus",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology"
+    ],
+    "part_used": "Heartwood",
+    "region": "Andhra Pradesh",
+    "medicinal_properties": [
+      "Cooling",
+      "Anti-inflammatory"
+    ],
+    "therapeutic_uses": [
+      "Acne",
+      "Skin blemishes",
+      "Heat rash"
+    ],
+    "precautions": "External use mostly.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Pterocarpus+santalinus+red+sandalwood",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/%28Pterocarpus_santalinus%29_red_sandalwood_tree_at_IG_Zoo_Park_in_Visakhapatnam_03.jpg"
+  },
+  {
+    "id": 193,
+    "common_name": "Latakaranja",
+    "botanical_name": "Caesalpinia bonduc",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Infectious Disease"
+    ],
+    "part_used": "Seeds",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Antipyretic",
+      "Antimalarial"
+    ],
+    "therapeutic_uses": [
+      "Fever",
+      "Malaria",
+      "Abdominal pain"
+    ],
+    "precautions": "Seeds are bitter.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Caesalpinia+bonduc+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Caesalpinia_bonduc_inflo.jpg/500px-Caesalpinia_bonduc_inflo.jpg"
+  },
+  {
+    "id": 194,
+    "common_name": "Karanj",
+    "botanical_name": "Pongamia pinnata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology"
+    ],
+    "part_used": "Oil/Seeds",
+    "region": "Pan-India",
+    "medicinal_properties": [
+      "Antiseptic",
+      "Antiparasitic"
+    ],
+    "therapeutic_uses": [
+      "Eczema",
+      "Scabies",
+      "Wound healing"
+    ],
+    "precautions": "Oil has strong smell; external use.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Pongamia+pinnata+karanj+tree",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Pongamia_pinnata_%28Karanj%29_near_Hyderabad_W_IMG_7633.jpg/500px-Pongamia_pinnata_%28Karanj%29_near_Hyderabad_W_IMG_7633.jpg"
+  },
+  {
+    "id": 195,
+    "common_name": "Mehndi (Henna)",
+    "botanical_name": "Lawsonia inermis",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Dermatology"
+    ],
+    "part_used": "Leaves",
+    "region": "Arid India",
+    "medicinal_properties": [
+      "Cooling",
+      "Antifungal"
+    ],
+    "therapeutic_uses": [
+      "Burning sensation",
+      "Hair conditioner",
+      "Fungal nails"
+    ],
+    "precautions": "Avoid internal use.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Lawsonia+inermis+henna+plant",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Lawsonia_inermis_%283709419835%29.jpg/500px-Lawsonia_inermis_%283709419835%29.jpg"
+  },
+  {
+    "id": 197,
+    "common_name": "Kadali (Banana)",
+    "botanical_name": "Musa paradisiaca",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Gastrointestinal",
+      "Gynecology"
+    ],
+    "part_used": "Fruit/Flower/Stem",
+    "region": "Tropical India",
+    "medicinal_properties": [
+      "Cooling",
+      "Astringent",
+      "Hemostatic"
+    ],
+    "therapeutic_uses": [
+      "Acidity",
+      "Menorrhagia",
+      "Kidney stones (stem juice)"
+    ],
+    "precautions": "Raw fruit causes constipation.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Musa+paradisiaca+banana+flower",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Banana_ancestors_%28Musa_acuminata_and_Musa_balbisiana%29_original_range.png"
+  },
+  {
+    "id": 199,
+    "common_name": "Kusha",
+    "botanical_name": "Desmostachya bipinnata",
+    "ayush_system": "Ayurveda",
+    "disease_category": [
+      "Urology",
+      "Gynecology"
+    ],
+    "part_used": "Root",
+    "region": "Arid India",
+    "medicinal_properties": [
+      "Diuretic",
+      "Cooling"
+    ],
+    "therapeutic_uses": [
+      "Urinary infection",
+      "Excessive thirst",
+      "Menorrhagia"
+    ],
+    "precautions": "Generally safe.",
+    "image_url": "https://image.pollinations.ai/prompt/photorealistic+Desmostachya+bipinnata+kusha+grass",
+    "new_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Desmostachya_bipinnata_%28L.%29_Stapf%2C_inflorescence_image.jpg"
+  }
+]

@@ -10,6 +10,7 @@ import plantRoutes from './routes/plantRoutes.js';
 import mediaRoutes from './routes/mediaRoutes.js';
 import generateRoutes from './routes/generateRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -21,10 +22,16 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+console.log('Environment loaded from:', path.resolve(__dirname, '../.env'));
+console.log('PLANTNET_API_KEY loaded:', !!process.env.PLANTNET_API_KEY);
+if (!process.env.PLANTNET_API_KEY) {
+  console.warn('⚠️ PLANTNET_API_KEY is missing! Identification features will fail.');
+}
+
 // Middleware
 app.use(morgan('dev')); // Log requests to console
 app.use(cors({
-  origin: ['http://localhost:5175', 'http://localhost:3000', 'http://localhost:5001'],
+  origin: ['http://localhost:5173', 'http://localhost:5175', 'http://localhost:3000', 'http://localhost:5001'],
   credentials: true
 }));
 app.use(express.json());
@@ -40,6 +47,7 @@ app.use('/api/plants', plantRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/generate', generateRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/chat', chatRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

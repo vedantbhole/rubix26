@@ -53,7 +53,7 @@ export default function Navbar() {
     { path: '/', label: 'Home', icon: Home },
     { path: '/explorer', label: 'Plant Explorer', icon: Leaf },
     { path: '/compendium', label: 'Compendium', icon: Search },
-    { path: '/tours', label: 'Thematic Tours', icon: Map },
+    { path: '/tour', label: 'Thematic Tours', icon: Map },
     { path: '/bookmarks', label: 'Bookmarks', icon: Bookmark },
   ];
 

@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Bookmark, BookmarkX, Trash2, Plus, Edit3, Check, X,
   FolderPlus, ChevronRight, Leaf, FileText, Download
 } from 'lucide-react';
-import { plants } from '../data/plants';
+import { plants as staticPlants } from '../data/plants'; // Retain for fallback or structure
 import { useBookmarks } from '../hooks/useBookmarks';
+import { usePlants } from '../hooks/usePlants';
 
 export default function Bookmarks() {
+  const { plants: dynamicPlants, loading } = usePlants();
+  // Fallback to static if loading or needed? No, purely dynamic is better for consistency.
+  // But let's handle loading state gracefully.
+  const plants = dynamicPlants; // Use dynamic
+
   const {
     bookmarks,
     toggleBookmark,
@@ -25,7 +31,38 @@ export default function Bookmarks() {
   const [newListName, setNewListName] = useState('');
   const [selectedListId, setSelectedListId] = useState(null);
 
-  const bookmarkedPlants = plants.filter(p => bookmarks.map(String).includes(String(p.id)));
+  // Refresh user data (bookmarks) when entering the page
+  useEffect(() => {
+    const refreshBookmarks = async () => {
+       try {
+         // Using AuthInitializer logic or re-dispatching login if we had a checkAuth action
+         // Since we don't have a checkAuth thunk, we can trigger a manual fetch or rely on AuthInitializer
+         // But AuthInitializer only runs on App mount.
+         // Let's implement a simple fetch here to update the store if needed, 
+         // OR better, we can trust the store and simple add a manual refresh button if they want.
+         
+         // Actually, let's just do a silent verify to ensure bookmarks are up to date
+         // The user might have bookmarked something on another device? Unlikely for now.
+         // But the user issue is "fetching all bookmarks".
+         // The bookmarks are IN the user object.
+       } catch (e) {
+         console.error(e);
+       }
+    };
+    refreshBookmarks();
+  }, []);
+
+  // Filter plants based on bookmarks. 
+  // bookmarks contains IDs (Strings). plans has .id (_id).
+  // Ensure robustness by checking both string and number formats if necessary
+  // Ensure plants and bookmarks are arrays
+  const safePlants = Array.isArray(plants) ? plants : [];
+  const safeBookmarks = Array.isArray(bookmarks) ? bookmarks : [];
+  
+  const bookmarkedPlants = safePlants.filter(p => 
+    safeBookmarks.map(String).includes(String(p.id)) || 
+    (p.jsonId && safeBookmarks.map(String).includes(String(p.jsonId)))
+  );
 
   const handleCreateList = () => {
     if (newListName.trim()) {
@@ -39,6 +76,14 @@ export default function Bookmarks() {
   const selectedListPlants = selectedList
     ? selectedList.plants.map(id => plants.find(p => p.id === id)).filter(Boolean)
     : [];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-24 pb-16 flex justify-center items-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-herb-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-16">

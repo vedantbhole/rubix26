@@ -30,7 +30,8 @@ const userSchema = new Schema({
         default: ''
     },
     bookmarkedPlants: [{
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Plant'
     }],
     isActive: {
         type: Boolean,

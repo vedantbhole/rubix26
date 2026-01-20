@@ -5,10 +5,12 @@ import {
   Search, Filter, Download, Table, Grid, 
   ArrowUpDown, ChevronRight, Eye, Bookmark
 } from 'lucide-react';
-import { plants, filterOptions, ayushSystems } from '../data/plants';
+import { filterOptions } from '../data/plants'; // Keep static options for now or fetch them
 import { useBookmarks } from '../hooks/useBookmarks';
+import { usePlants } from '../hooks/usePlants';
 
 export default function Compendium() {
+  const { plants, loading } = usePlants(); // Use hook
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
   const [sortOrder, setSortOrder] = useState('asc');
@@ -17,6 +19,7 @@ export default function Compendium() {
   const { isBookmarked, toggleBookmark } = useBookmarks();
 
   const filteredAndSortedPlants = useMemo(() => {
+    if (loading) return []; // Handle loading
     let result = [...plants];
 
     // Filter by search
