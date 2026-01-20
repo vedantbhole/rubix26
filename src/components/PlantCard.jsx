@@ -1,17 +1,24 @@
-import { useState, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Heart, Eye, Bookmark, BookmarkCheck, ArrowRight } from 'lucide-react';
+import {
+  Bookmark,
+  BookmarkCheck,
+  ArrowRight,
+  Loader2,
+  MapPin,
+  Leaf,
+  Activity,
+  Eye
+} from 'lucide-react';
 import { useBookmarks } from '../hooks/useBookmarks';
 import PlantModelModal from './PlantModelModal';
 
-// Lazy load the 3D preview for performance
 const PlantModelPreview = lazy(() => import('./PlantModelPreview'));
 
-// Map of plant IDs to their 3D model paths
 const plantModels = {
-  1: '/models/tulsi.glb',        // Tulsi
-  2: '/models/ashwagandha.glb',  // Ashwagandha
+  1: '/models/tulsi.glb',
+  2: '/models/ashwagandha.glb',
   3: '/models/neem.glb',
   4: '/models/basil.glb',
   5: '/models/lavender.glb',
@@ -22,19 +29,80 @@ const plantModels = {
 };
 
 export default function PlantCard({ plant, index = 0 }) {
+  const navigate = useNavigate();
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const bookmarked = isBookmarked(plant.id);
-  const [showModelModal, setShowModelModal] = useState(false);
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [showModelModal, setShowModelModal] = useState(false);
 
-  // Check if this plant has a 3D model
-  const has3DModel = plantModels[plant.id];
+  const imgRef = useRef(null);
 
+  const has3DModel = Boolean(plantModels[plant.id]);
+
+  // ---------- Normalize data ----------
+  const plantName = plant.common_name || plant.name || 'Unnamed Plant';
+  const botanicalName = plant.botanical_name || plant.botanicalName || '';
+  const imageUrl = plant.new_url || plant.image || null;
+  const region = plant.region || '';
+  const partUsed =
+    plant.part_used ||
+    (Array.isArray(plant.partUsed) ? plant.partUsed.join(', ') : plant.partUsed) ||
+    '';
+
+  const ayushSystem =
+    plant.ayush_system ||
+    (Array.isArray(plant.ayushSystem) ? plant.ayushSystem[0] : plant.ayushSystem) ||
+    '';
+
+  const diseaseList = Array.isArray(plant.disease_category)
+    ? plant.disease_category
+    : plant.disease_category
+      ? [plant.disease_category]
+      : [];
+
+  const usesList = Array.isArray(plant.therapeutic_uses)
+    ? plant.therapeutic_uses
+    : plant.therapeutic_uses
+      ? [plant.therapeutic_uses]
+      : [];
+
+  const propsList = Array.isArray(plant.medicinal_properties)
+    ? plant.medicinal_properties
+    : plant.medicinal_properties
+      ? [plant.medicinal_properties]
+      : [];
+
+  // ---------- IMAGE STATE FIX ----------
+  useEffect(() => {
+    if (!imageUrl) {
+      // No image → mark as loaded immediately
+      setImageLoaded(true);
+      setImageError(true);
+    } else {
+      setImageLoaded(false);
+      setImageError(false);
+    }
+  }, [plant.id, imageUrl]);
+
+  const handleImageLoad = () => setImageLoaded(true);
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true);
+  };
+
+  const handleCardClick = () => navigate(`/plant/${plant.id}`);
+  const handleLearnMoreClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigate(`/plant/${plant.id}`);
+  };
   const handleEyeClick = (e) => {
     e.preventDefault();
-    if (has3DModel) {
-      setShowModelModal(true);
-    }
+    e.stopPropagation();
+    if (has3DModel) setShowModelModal(true);
   };
 
   return (
@@ -42,141 +110,108 @@ export default function PlantCard({ plant, index = 0 }) {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="plant-card group"
+        transition={{ duration: 0.4, delay: index * 0.04 }}
+        className="plant-card group cursor-pointer"
+        onClick={handleCardClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Image Container */}
-        <div className="relative h-56 overflow-hidden bg-dark-700">
-          {/* Static image - hidden when hovering on plants with 3D models */}
-          <img
-            src={plant.image}
-            alt={plant.name}
-            className={`w-full h-full object-cover transition-all duration-500 ${has3DModel && isHovered
-              ? 'opacity-0 scale-110'
-              : 'opacity-100 group-hover:scale-110'
-              }`}
-          />
-
-          {/* 3D Model Preview - shown on hover for plants with models */}
-          {has3DModel && isHovered && (
-            <Suspense fallback={null}>
-              <PlantModelPreview
-                modelPath={plantModels[plant.id]}
-                isHovered={isHovered}
-              />
-            </Suspense>
-          )}
-
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 pointer-events-none" />
-
-          {/* 3D indicator badge */}
-          {has3DModel && (
-            <div className={`absolute bottom-4 left-4 px-2 py-1 text-xs font-medium bg-herb-500/20 backdrop-blur-sm text-herb-400 rounded-lg border border-herb-500/30 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-              3D Model
+        {/* IMAGE SECTION */}
+        <div className="relative h-48 overflow-hidden bg-dark-700">
+          {!imageLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center animate-pulse">
+              <Loader2 className="w-8 h-8 text-herb-500 animate-spin" />
             </div>
           )}
 
-          {/* AYUSH Badge */}
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
-            {plant.ayushSystem.slice(0, 2).map((system, i) => (
-              <span
-                key={i}
-                className="px-3 py-1 text-xs font-medium bg-dark-800/80 backdrop-blur-sm text-herb-400 rounded-full border border-herb-500/30"
-              >
-                {system}
-              </span>
-            ))}
+          {/* Show image only when NOT hovering on a 3D model card */}
+          {imageUrl && !imageError && !(has3DModel && isHovered) && (
+            <img
+              ref={imgRef}
+              src={imageUrl}
+              alt={plantName}
+              loading="lazy"
+              onLoad={handleImageLoad}
+              onError={handleImageError}
+              className={`w-full h-full object-cover transition-all duration-500 ${imageLoaded ? 'opacity-100 group-hover:scale-110' : 'opacity-0'
+                }`}
+            />
+          )}
+
+          {imageError && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
+              <span className="text-4xl">🌿</span>
+              <span className="text-xs mt-1">{plantName}</span>
+            </div>
+          )}
+
+          {has3DModel && isHovered && (
+            <Suspense fallback={null}>
+              <PlantModelPreview modelPath={plantModels[plant.id]} isHovered />
+            </Suspense>
+          )}
+
+          {/* Badges */}
+          <div className="absolute top-4 left-4 z-10">
+            <span className="px-3 py-1 text-xs bg-herb-500 text-white rounded-full">
+              {ayushSystem}
+            </span>
           </div>
 
-          {/* Bookmark Button */}
           <button
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation();
               toggleBookmark(plant.id);
             }}
-            className={`absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 z-10 ${bookmarked
-              ? 'bg-herb-500 text-white'
-              : 'bg-dark-800/80 backdrop-blur-sm text-gray-400 hover:text-herb-400 border border-herb-500/30'
+            className={`absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center ${bookmarked
+                ? 'bg-herb-500 text-white'
+                : 'bg-dark-800 text-gray-400'
               }`}
           >
-            {bookmarked ? (
-              <BookmarkCheck className="w-5 h-5" />
-            ) : (
-              <Bookmark className="w-5 h-5" />
-            )}
+            {bookmarked ? <BookmarkCheck /> : <Bookmark />}
           </button>
 
-          {/* Quick View Button - Opens modal for plants with 3D models */}
-          {has3DModel ? (
+          {has3DModel && (
             <button
               onClick={handleEyeClick}
-              className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-herb-500/90 text-white flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-10"
-              title="View 3D Model"
+              className="absolute bottom-4 right-4 w-10 h-10 bg-herb-500 text-white rounded-xl opacity-0 group-hover:opacity-100 transition"
             >
-              <Eye className="w-5 h-5" />
+              <Eye />
             </button>
-          ) : (
-            <Link
-              to={`/plant/${plant.id}`}
-              className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-herb-500/90 text-white flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-10"
-            >
-              <Eye className="w-5 h-5" />
-            </Link>
           )}
         </div>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Title */}
-          <Link to={`/plant/${plant.id}`}>
-            <h3 className="font-display font-bold text-xl text-white mb-1 group-hover:text-herb-400 transition-colors">
-              {plant.name}
-            </h3>
-          </Link>
-          <p className="text-herb-500/80 text-sm italic mb-3">{plant.botanicalName}</p>
+        {/* CONTENT */}
+        <div className="p-5">
+          <h3 className="font-bold text-lg text-white">{plantName}</h3>
+          <p className="text-sm italic text-gray-400">{botanicalName}</p>
 
-          {/* Description */}
-          <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
-            {plant.description}
-          </p>
-
-          {/* Properties Tags */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {plant.medicinalProperties.slice(0, 3).map((prop, i) => (
-              <span
-                key={i}
-                className="px-2 py-1 text-xs bg-dark-600 text-gray-300 rounded-lg"
-              >
-                {prop}
-              </span>
-            ))}
+          <div className="flex gap-3 mt-2 text-xs text-gray-400">
+            <span className="flex items-center gap-1">
+              <MapPin className="w-3 h-3" /> {region}
+            </span>
+            <span className="flex items-center gap-1">
+              <Leaf className="w-3 h-3" /> {partUsed}
+            </span>
           </div>
 
-          {/* Footer */}
-          <div className="flex items-center justify-between pt-4 border-t border-herb-500/10">
-            <span className="text-sm text-gray-500">
-              {plant.partUsed.slice(0, 2).join(' • ')}
-            </span>
-            <Link
-              to={`/plant/${plant.id}`}
-              className="flex items-center gap-1 text-herb-400 text-sm font-medium hover:gap-2 transition-all duration-300"
+          <div className="flex justify-end mt-4 pt-3 border-t border-gray-700">
+            <button
+              onClick={handleLearnMoreClick}
+              className="text-herb-400 flex items-center gap-1"
             >
-              Learn More
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              Learn More <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </motion.div>
 
-      {/* 3D Model Modal */}
       {has3DModel && (
         <PlantModelModal
           isOpen={showModelModal}
           onClose={() => setShowModelModal(false)}
-          plantName={plant.name}
+          plantName={plantName}
           modelPath={plantModels[plant.id]}
         />
       )}
