@@ -26,3 +26,4 @@ dist-ssr
 *.glb
 
 public/models/*
+.env

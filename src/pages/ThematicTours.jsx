@@ -77,7 +77,7 @@ export default function ThematicTours() {
     // Load GLB Model
     const loader = new GLTFLoader();
     loader.load(
-      '/src/3dmodel/gardfinal.glb',
+      '/models/varun_ka_garden.glb',
       (gltf) => {
         const model = gltf.scene;
         scene.add(model);
@@ -315,10 +315,10 @@ export default function ThematicTours() {
                     key={plant.id}
                     onClick={() => setCurrentPlantIndex(index)}
                     className={`flex-1 h-2 rounded-full transition-all duration-300 ${index < currentPlantIndex
-                        ? 'bg-herb-500'
-                        : index === currentPlantIndex
-                          ? 'bg-herb-400 animate-pulse'
-                          : 'bg-dark-600'
+                      ? 'bg-herb-500'
+                      : index === currentPlantIndex
+                        ? 'bg-herb-400 animate-pulse'
+                        : 'bg-dark-600'
                       }`}
                   />
                 ))}
