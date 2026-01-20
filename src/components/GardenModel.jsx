@@ -21,10 +21,9 @@ const PLANT_CONFIG = {
     aloevera: { ringYOffset: 0.08 },
     basil: { offset: [1, 0.8, -1] }, // View from the left/right flip
     lavender: { offset: [-1, 0.8, -1], ringYOffset: 0.01 },
-    neem: { offset: [1, 0.8, 1], zoomMultiplier: 1.3 }, // Zoom out for trees
+    neem: { ringYOffset: 0.1, offset: [1, 0.8, 1], zoomMultiplier: 1.3 }, // Zoom out for trees
     peepal: { ringYOffset: 0.5, offset: [-0.46, 0.57, 0.68], zoomMultiplier: 1, targetOffset: [0, 0.19, 0] }, // Lift focus up by 2 units
     tulsi: { targetOffset: [0, 0.05, 0] },
-    neem: { ringYOffset: 0.1 },
 };
 
 export default function GardenModel({ currentPlant, onPlantsLoaded }) {
