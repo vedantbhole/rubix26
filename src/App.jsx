@@ -10,6 +10,8 @@ import Compendium from './pages/Compendium';
 import ThematicTours from './pages/ThematicTours';
 import Bookmarks from './pages/Bookmarks';
 import GardenTour from './pages/GardenTour';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
 import './index.css';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
                 <Route path="/compendium" element={<Compendium />} />
                 <Route path="/tours" element={<ThematicTours />} />
                 <Route path="/bookmarks" element={<Bookmarks />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
               </Routes>
             </main>
             <Footer />

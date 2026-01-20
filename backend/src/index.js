@@ -2,10 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 import { connectDB } from './config/db.js';
 import plantRoutes from './routes/plantRoutes.js';
 import mediaRoutes from './routes/mediaRoutes.js';
 import generateRoutes from './routes/generateRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 
@@ -14,8 +16,12 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(morgan('dev')); // Log requests to console
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:5001'],
+  credentials: true
+}));
 app.use(express.json());
+app.use(cookieParser());
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -26,6 +32,7 @@ app.get('/api/health', (req, res) => {
 app.use('/api/plants', plantRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/generate', generateRoutes);
+app.use('/api/auth', authRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

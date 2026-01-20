@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   Bookmark, BookmarkX, Trash2, Plus, Edit3, Check, X,
   FolderPlus, ChevronRight, Leaf, FileText, Download
 } from 'lucide-react';
@@ -9,11 +9,11 @@ import { plants } from '../data/plants';
 import { useBookmarks } from '../hooks/useBookmarks';
 
 export default function Bookmarks() {
-  const { 
-    bookmarks, 
-    toggleBookmark, 
-    studyLists, 
-    createStudyList, 
+  const {
+    bookmarks,
+    toggleBookmark,
+    studyLists,
+    createStudyList,
     addToStudyList,
     removeFromStudyList,
     deleteStudyList,
@@ -25,7 +25,7 @@ export default function Bookmarks() {
   const [newListName, setNewListName] = useState('');
   const [selectedListId, setSelectedListId] = useState(null);
 
-  const bookmarkedPlants = plants.filter(p => bookmarks.includes(p.id));
+  const bookmarkedPlants = plants.filter(p => bookmarks.map(String).includes(String(p.id)));
 
   const handleCreateList = () => {
     if (newListName.trim()) {
@@ -36,7 +36,7 @@ export default function Bookmarks() {
   };
 
   const selectedList = studyLists.find(l => l.id === selectedListId);
-  const selectedListPlants = selectedList 
+  const selectedListPlants = selectedList
     ? selectedList.plants.map(id => plants.find(p => p.id === id)).filter(Boolean)
     : [];
 
@@ -53,7 +53,7 @@ export default function Bookmarks() {
             My <span className="text-gradient">Collection</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Your bookmarked plants, personal notes, and custom study lists - 
+            Your bookmarked plants, personal notes, and custom study lists -
             all in one place for easy reference.
           </p>
         </motion.div>
@@ -63,11 +63,10 @@ export default function Bookmarks() {
           <div className="glass-card p-1 inline-flex">
             <button
               onClick={() => { setActiveTab('bookmarks'); setSelectedListId(null); }}
-              className={`px-6 py-3 rounded-xl font-medium transition-all ${
-                activeTab === 'bookmarks'
+              className={`px-6 py-3 rounded-xl font-medium transition-all ${activeTab === 'bookmarks'
                   ? 'bg-herb-500 text-white'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               <div className="flex items-center gap-2">
                 <Bookmark className="w-5 h-5" />
@@ -76,11 +75,10 @@ export default function Bookmarks() {
             </button>
             <button
               onClick={() => { setActiveTab('lists'); setSelectedListId(null); }}
-              className={`px-6 py-3 rounded-xl font-medium transition-all ${
-                activeTab === 'lists'
+              className={`px-6 py-3 rounded-xl font-medium transition-all ${activeTab === 'lists'
                   ? 'bg-herb-500 text-white'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               <div className="flex items-center gap-2">
                 <FileText className="w-5 h-5" />
@@ -116,7 +114,7 @@ export default function Bookmarks() {
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent" />
-                        
+
                         {/* Remove Bookmark */}
                         <button
                           onClick={() => toggleBookmark(plant.id)}
@@ -125,7 +123,7 @@ export default function Bookmarks() {
                           <BookmarkX className="w-4 h-4" />
                         </button>
                       </div>
-                      
+
                       <div className="p-5">
                         <Link to={`/plant/${plant.id}`}>
                           <h3 className="font-display font-bold text-lg text-white mb-1 group-hover:text-herb-400 transition-colors">
@@ -133,7 +131,7 @@ export default function Bookmarks() {
                           </h3>
                         </Link>
                         <p className="text-herb-500/70 text-sm italic mb-3">{plant.botanicalName}</p>
-                        
+
                         {/* Note Preview */}
                         {getNote(plant.id) && (
                           <div className="p-3 bg-dark-600 rounded-lg mb-3">
