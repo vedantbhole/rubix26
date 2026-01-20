@@ -165,17 +165,16 @@ export default function PlantCard({ plant, index = 0 }) {
               toggleBookmark(plant.id);
             }}
             className={`absolute top-4 right-4 w-10 h-10 rounded-xl flex items-center justify-center ${bookmarked
-                ? 'bg-herb-500 text-white'
-                : 'bg-dark-800 text-gray-400'
+              ? 'bg-herb-500 text-white'
+              : 'bg-dark-800 text-gray-400'
               }`}
           >
             {bookmarked ? <BookmarkCheck /> : <Bookmark />}
           </button>
-
           {has3DModel && (
             <button
               onClick={handleEyeClick}
-              className="absolute bottom-4 right-4 w-10 h-10 bg-herb-500 text-white rounded-xl opacity-0 group-hover:opacity-100 transition"
+              className="absolute bottom-4 right-4 w-10 h-10 bg-herb-500 text-white rounded-xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
             >
               <Eye />
             </button>
