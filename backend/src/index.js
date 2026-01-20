@@ -3,21 +3,28 @@ import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { connectDB } from './config/db.js';
 import plantRoutes from './routes/plantRoutes.js';
 import mediaRoutes from './routes/mediaRoutes.js';
 import generateRoutes from './routes/generateRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 
-dotenv.config();
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load .env from parent directory (backend/.env)
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(morgan('dev')); // Log requests to console
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:5001'],
+  origin: ['http://localhost:5175', 'http://localhost:3000', 'http://localhost:5001'],
   credentials: true
 }));
 app.use(express.json());

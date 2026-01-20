@@ -64,8 +64,8 @@ export default function Bookmarks() {
             <button
               onClick={() => { setActiveTab('bookmarks'); setSelectedListId(null); }}
               className={`px-6 py-3 rounded-xl font-medium transition-all ${activeTab === 'bookmarks'
-                  ? 'bg-herb-500 text-white'
-                  : 'text-gray-400 hover:text-white'
+                ? 'bg-herb-500 text-white'
+                : 'text-gray-400 hover:text-white'
                 }`}
             >
               <div className="flex items-center gap-2">
@@ -76,8 +76,8 @@ export default function Bookmarks() {
             <button
               onClick={() => { setActiveTab('lists'); setSelectedListId(null); }}
               className={`px-6 py-3 rounded-xl font-medium transition-all ${activeTab === 'lists'
-                  ? 'bg-herb-500 text-white'
-                  : 'text-gray-400 hover:text-white'
+                ? 'bg-herb-500 text-white'
+                : 'text-gray-400 hover:text-white'
                 }`}
             >
               <div className="flex items-center gap-2">
@@ -109,8 +109,8 @@ export default function Bookmarks() {
                     >
                       <div className="relative h-48">
                         <img
-                          src={plant.image}
-                          alt={plant.name}
+                          src={plant.new_url || plant.image_url || plant.image}
+                          alt={plant.common_name || plant.name}
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent" />
@@ -127,10 +127,10 @@ export default function Bookmarks() {
                       <div className="p-5">
                         <Link to={`/plant/${plant.id}`}>
                           <h3 className="font-display font-bold text-lg text-white mb-1 group-hover:text-herb-400 transition-colors">
-                            {plant.name}
+                            {plant.common_name || plant.name}
                           </h3>
                         </Link>
-                        <p className="text-herb-500/70 text-sm italic mb-3">{plant.botanicalName}</p>
+                        <p className="text-herb-500/70 text-sm italic mb-3">{plant.botanical_name || plant.botanicalName}</p>
 
                         {/* Note Preview */}
                         {getNote(plant.id) && (
@@ -143,11 +143,9 @@ export default function Bookmarks() {
 
                         <div className="flex items-center justify-between">
                           <div className="flex flex-wrap gap-1">
-                            {plant.ayushSystem.slice(0, 2).map((sys, i) => (
-                              <span key={i} className="px-2 py-0.5 bg-herb-500/10 text-herb-400 text-xs rounded">
-                                {sys}
-                              </span>
-                            ))}
+                            <span className="px-2 py-0.5 bg-herb-500/10 text-herb-400 text-xs rounded">
+                              {plant.ayush_system || (Array.isArray(plant.ayushSystem) ? plant.ayushSystem[0] : plant.ayushSystem) || 'AYUSH'}
+                            </span>
                           </div>
                           <Link
                             to={`/plant/${plant.id}`}
@@ -224,8 +222,8 @@ export default function Bookmarks() {
                           {listPlants.slice(0, 5).map(plant => (
                             <img
                               key={plant.id}
-                              src={plant.image}
-                              alt={plant.name}
+                              src={plant.new_url || plant.image_url || plant.image}
+                              alt={plant.common_name || plant.name}
                               className="w-10 h-10 rounded-full border-2 border-dark-700 object-cover"
                             />
                           ))}
@@ -295,7 +293,7 @@ export default function Bookmarks() {
                           className="flex items-center gap-2 px-3 py-2 bg-dark-600 rounded-lg hover:bg-dark-500 transition-colors"
                         >
                           <Plus className="w-4 h-4 text-herb-400" />
-                          <span className="text-gray-300">{plant.name}</span>
+                          <span className="text-gray-300">{plant.common_name || plant.name}</span>
                         </button>
                       ))}
                   </div>
@@ -314,8 +312,8 @@ export default function Bookmarks() {
                       className="glass-card p-4 flex items-center gap-4 group"
                     >
                       <img
-                        src={plant.image}
-                        alt={plant.name}
+                        src={plant.new_url || plant.image_url || plant.image}
+                        alt={plant.common_name || plant.name}
                         className="w-16 h-16 rounded-xl object-cover"
                       />
                       <div className="flex-1">
@@ -323,9 +321,9 @@ export default function Bookmarks() {
                           to={`/plant/${plant.id}`}
                           className="font-display font-semibold text-white hover:text-herb-400 transition-colors"
                         >
-                          {plant.name}
+                          {plant.common_name || plant.name}
                         </Link>
-                        <p className="text-gray-500 text-sm">{plant.botanicalName}</p>
+                        <p className="text-gray-500 text-sm">{plant.botanical_name || plant.botanicalName}</p>
                       </div>
                       <button
                         onClick={() => removeFromStudyList(selectedList.id, plant.id)}
