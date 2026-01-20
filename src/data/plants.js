@@ -5,7 +5,7 @@ export const plants = [
     name: "Tulsi",
     botanicalName: "Ocimum sanctum",
     commonNames: ["Holy Basil", "Sacred Basil", "Queen of Herbs"],
-    image: "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?w=800",
+    image: "/images/plants/tulsi.png",
     ayushSystem: ["Ayurveda", "Siddha"],
     category: "Adaptogen",
     region: "Indian Subcontinent",
@@ -32,7 +32,7 @@ export const plants = [
     name: "Ashwagandha",
     botanicalName: "Withania somnifera",
     commonNames: ["Indian Ginseng", "Winter Cherry"],
-    image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=800",
+    image: "/images/plants/ashwagandha.png",
     ayushSystem: ["Ayurveda"],
     category: "Adaptogen",
     region: "India, Middle East, Africa",
@@ -59,7 +59,7 @@ export const plants = [
     name: "Neem",
     botanicalName: "Azadirachta indica",
     commonNames: ["Indian Lilac", "Margosa"],
-    image: "https://images.unsplash.com/photo-1622467827417-bbe2237067a9?w=800",
+    image: "/images/plants/neem.png",
     ayushSystem: ["Ayurveda", "Unani", "Siddha"],
     category: "Antimicrobial",
     region: "Indian Subcontinent",
@@ -83,6 +83,103 @@ export const plants = [
   },
   {
     id: 4,
+    name: "Basil",
+    botanicalName: "Ocimum basilicum",
+    commonNames: ["Sweet Basil", "Italian Basil"],
+    image: "/images/plants/basil.png",
+    ayushSystem: ["Ayurveda"],
+    category: "Digestive Herb",
+    region: "Tropical Asia",
+    partUsed: ["Leaves", "Seeds"],
+    medicinalProperties: [
+      "Antioxidant",
+      "Anti-inflammatory",
+      "Carminative",
+      "Antibacterial"
+    ],
+    therapeuticUses: [
+      "Digestive discomfort",
+      "Loss of appetite",
+      "Mild cough and cold",
+      "Stress reduction",
+      "Inflammation relief"
+    ],
+    precautions: [
+      "Excess consumption may affect blood clotting",
+      "Use cautiously during pregnancy",
+      "Essential oil should not be ingested directly"
+    ],
+    description: "Basil is a fragrant culinary and medicinal herb used traditionally to support digestion and respiratory health. It is milder than Tulsi but still offers notable therapeutic benefits.",
+    healthThemes: ["digestion", "respiratory", "inflammation"],
+    doshaEffect: "Balances Kapha; mild effect on Vata and Pitta"
+  },
+  {
+    id: 5,
+    name: "Lavender",
+    botanicalName: "Lavandula angustifolia",
+    commonNames: ["True Lavender", "English Lavender"],
+    image: "/images/plants/lavender.png",
+    ayushSystem: ["Aromatherapy", "Ayurveda (modern use)"],
+    category: "Nervine",
+    region: "Mediterranean region",
+    partUsed: ["Flowers", "Essential Oil"],
+    medicinalProperties: [
+      "Calming",
+      "Antiseptic",
+      "Anti-anxiety",
+      "Sleep-inducing",
+      "Anti-inflammatory"
+    ],
+    therapeuticUses: [
+      "Anxiety and stress",
+      "Insomnia",
+      "Headaches",
+      "Minor burns and cuts",
+      "Skin irritation"
+    ],
+    precautions: [
+      "Essential oil must be diluted before skin use",
+      "Avoid ingestion without professional guidance",
+      "May cause drowsiness"
+    ],
+    description: "Lavender is widely valued for its calming aroma and therapeutic effects on the nervous system. It is commonly used in aromatherapy, skincare, and stress management practices.",
+    healthThemes: ["stress", "sleep", "mental health"],
+    doshaEffect: "Balances Vata and Pitta"
+  },
+  {
+    id: 6,
+    name: "Aloe Vera",
+    botanicalName: "Aloe vera (L.) Burm.f.",
+    commonNames: ["Ghritkumari", "True Aloe", "Burn Plant"],
+    image: "/images/plants/aloevera.png",
+    ayushSystem: ["Ayurveda", "Unani", "Siddha"],
+    category: "Rejuvenative",
+    region: "Arabian Peninsula, now cultivated worldwide",
+    partUsed: ["Leaf Gel", "Latex"],
+    medicinalProperties: [
+      "Anti-inflammatory",
+      "Wound healing",
+      "Antibacterial",
+      "Moisturizing",
+      "Digestive support"
+    ],
+    therapeuticUses: [
+      "Burns and wound healing",
+      "Skin hydration",
+      "Constipation (latex use, limited)",
+      "Gastric ulcers",
+      "Hair and scalp care"
+    ],
+    precautions: [
+      "Oral latex use may cause cramps and diarrhea",
+      "Avoid during pregnancy",
+      "Prolonged oral use may affect electrolytes"
+    ],
+    description: "Aloe Vera is a well-known medicinal succulent valued for its soothing gel. It is extensively used in traditional medicine and modern skincare for its healing and cooling properties.",
+    healthThemes: ["skin", "digestion", "healing"],
+    doshaEffect: "Balances Pitta; may aggravate Vata if overused"
+  }, {
+    id: 7,
     name: "Turmeric",
     botanicalName: "Curcuma longa",
     commonNames: ["Haldi", "Golden Spice"],
@@ -109,7 +206,7 @@ export const plants = [
     doshaEffect: "Balances all three Doshas"
   },
   {
-    id: 5,
+    id: 8,
     name: "Brahmi",
     botanicalName: "Bacopa monnieri",
     commonNames: ["Water Hyssop", "Herb of Grace"],
@@ -136,7 +233,7 @@ export const plants = [
     doshaEffect: "Balances Vata, Pitta, and Kapha"
   },
   {
-    id: 6,
+    id: 9,
     name: "Amla",
     botanicalName: "Phyllanthus emblica",
     commonNames: ["Indian Gooseberry", "Amalaki"],
@@ -163,7 +260,7 @@ export const plants = [
     doshaEffect: "Balances all three Doshas"
   },
   {
-    id: 7,
+    id: 10,
     name: "Giloy",
     botanicalName: "Tinospora cordifolia",
     commonNames: ["Guduchi", "Heart-leaved Moonseed"],
@@ -190,7 +287,7 @@ export const plants = [
     doshaEffect: "Balances Vata, Pitta, and Kapha"
   },
   {
-    id: 8,
+    id: 11,
     name: "Shatavari",
     botanicalName: "Asparagus racemosus",
     commonNames: ["Wild Asparagus", "Queen of Herbs"],
@@ -217,7 +314,7 @@ export const plants = [
     doshaEffect: "Balances Vata and Pitta"
   },
   {
-    id: 9,
+    id: 12,
     name: "Manjistha",
     botanicalName: "Rubia cordifolia",
     commonNames: ["Indian Madder"],
@@ -244,7 +341,7 @@ export const plants = [
     doshaEffect: "Balances Pitta and Kapha"
   },
   {
-    id: 10,
+    id: 13,
     name: "Triphala",
     botanicalName: "Amalaki + Bibhitaki + Haritaki",
     commonNames: ["Three Fruits"],
@@ -271,7 +368,7 @@ export const plants = [
     doshaEffect: "Balances all three Doshas"
   },
   {
-    id: 11,
+    id: 14,
     name: "Licorice",
     botanicalName: "Glycyrrhiza glabra",
     commonNames: ["Mulethi", "Yashtimadhu"],
@@ -298,7 +395,7 @@ export const plants = [
     doshaEffect: "Balances Vata and Pitta"
   },
   {
-    id: 12,
+    id: 15,
     name: "Ginger",
     botanicalName: "Zingiber officinale",
     commonNames: ["Adrak", "Shunthi (dried)"],
@@ -325,7 +422,7 @@ export const plants = [
     doshaEffect: "Balances Vata and Kapha"
   },
   {
-    id: 13,
+    id: 16,
     name: "Gudmar",
     botanicalName: "Gymnema sylvestre",
     commonNames: ["Sugar Destroyer", "Meshashringi"],
@@ -352,7 +449,7 @@ export const plants = [
     doshaEffect: "Balances Kapha"
   },
   {
-    id: 14,
+    id: 17,
     name: "Arjuna",
     botanicalName: "Terminalia arjuna",
     commonNames: ["Arjun Tree"],
@@ -379,7 +476,7 @@ export const plants = [
     doshaEffect: "Balances Kapha and Pitta"
   },
   {
-    id: 15,
+    id: 18,
     name: "Shankhpushpi",
     botanicalName: "Convolvulus pluricaulis",
     commonNames: ["Morning Glory"],
@@ -406,7 +503,7 @@ export const plants = [
     doshaEffect: "Balances Pitta"
   },
   {
-    id: 16,
+    id: 19,
     name: "Moringa",
     botanicalName: "Moringa oleifera",
     commonNames: ["Drumstick Tree", "Miracle Tree"],
@@ -431,7 +528,8 @@ export const plants = [
     description: "Moringa is called the 'Miracle Tree' because almost every part is useful. Its leaves contain more nutrients gram-for-gram than most other plants.",
     healthThemes: ["nutrition", "energy", "immunity"],
     doshaEffect: "Balances Kapha and Vata"
-  }
+  },
+
 ];
 
 // Health themes for guided tours

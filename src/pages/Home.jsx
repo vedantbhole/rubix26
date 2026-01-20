@@ -151,20 +151,23 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Scroll indicator */}
+
+          </motion.div>
+
+          {/* Scroll indicator - Moved to global scope */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            style={{ opacity }}
+            transition={{ delay: 1, duration: 1 }}
+            className="absolute bottom-8 right-8 z-40 flex flex-col items-center gap-2"
+          >
+            <span className="text-sm" style={{ color: '#6b7280' }}>Scroll to grow</span>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="absolute bottom-8 left-8 lg:left-16 flex flex-col items-center gap-2"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
             >
-              <span className="text-sm" style={{ color: '#6b7280' }}>Scroll to grow</span>
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <ChevronDown className="w-6 h-6" style={{ color: '#22c55e' }} />
-              </motion.div>
+              <ChevronDown className="w-6 h-6" style={{ color: '#22c55e' }} />
             </motion.div>
           </motion.div>
         </div>

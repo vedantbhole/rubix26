@@ -141,7 +141,7 @@ export default function ScrollPlantAnimation({ progress }) {
       )}
 
       {/* Growth indicator */}
-      {!isLoading && images.length > 0 && (
+      {/* {!isLoading && images.length > 0 && (
         <div className="absolute bottom-8 right-8 text-right z-40">
           <motion.div
             className="font-bold text-2xl mb-2"
@@ -165,7 +165,7 @@ export default function ScrollPlantAnimation({ progress }) {
             Frame {currentFrameIndex + 1} / {images.length}
           </p>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
