@@ -141,6 +141,7 @@ router.post('/audio/:plantName', async (req, res, next) => {
               if (BUCKET_ID && existingAudio.fileId) {
                 const fileBuffer = await storage.getFileDownload(BUCKET_ID, existingAudio.fileId);
                 await fs.writeFile(localFilePath, Buffer.from(fileBuffer));
+                
                 console.log(`💾 Downloaded and saved audio to: ${localFilePath}`);
               }
             }
