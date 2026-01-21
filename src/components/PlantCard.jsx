@@ -87,11 +87,30 @@ export default function PlantCard({ plant, index = 0 }) {
       // No image → mark as loaded immediately
       setImageLoaded(true);
       setImageError(true);
-    } else {
-      setImageLoaded(false);
-      setImageError(false);
+      return;
     }
-  }, [numericId, imageUrl]);
+
+    // Reset states for new image
+    setImageLoaded(false);
+    setImageError(false);
+
+    // For plants without 3D models, programmatically preload the image
+    // This ensures loading works properly during client-side navigation
+    if (!has3DModel) {
+      const img = new Image();
+      img.onload = () => setImageLoaded(true);
+      img.onerror = () => {
+        setImageError(true);
+        setImageLoaded(true);
+      };
+      img.src = imageUrl;
+
+      // If the image is already cached, it might load synchronously
+      if (img.complete) {
+        setImageLoaded(true);
+      }
+    }
+  }, [numericId, imageUrl, has3DModel]);
 
   const handleImageLoad = () => setImageLoaded(true);
   const handleImageError = () => {
