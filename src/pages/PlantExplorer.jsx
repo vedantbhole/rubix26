@@ -239,6 +239,133 @@ export default function PlantExplorer() {
           </div>
         </div>
 
+        {/* Filter Panel */}
+        <AnimatePresence>
+          {showFilters && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="glass-card p-6 mb-8 overflow-hidden"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-lg font-semibold text-white">Filters</h3>
+                <div className="flex gap-2">
+                  {activeFilterCount > 0 && (
+                    <button
+                      onClick={clearFilters}
+                      className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      <X className="w-4 h-4" />
+                      Clear All
+                    </button>
+                  )}
+                  <button
+                    onClick={() => setShowFilters(false)}
+                    className="p-1.5 text-gray-400 hover:text-white transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* AYUSH System Filter */}
+                <div>
+                  <h4 className="text-herb-400 font-medium mb-3">AYUSH System</h4>
+                  <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
+                    {filterOptions.ayushSystems.map(system => (
+                      <label
+                        key={system}
+                        className="flex items-center gap-2 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={activeFilters.ayushSystem.includes(system)}
+                          onChange={() => toggleFilter('ayushSystem', system)}
+                          className="w-4 h-4 rounded border-gray-600 bg-dark-600 text-herb-500 focus:ring-herb-500 focus:ring-offset-0"
+                        />
+                        <span className="text-gray-300 group-hover:text-white transition-colors text-sm">
+                          {system}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Disease Category Filter */}
+                <div>
+                  <h4 className="text-herb-400 font-medium mb-3">Disease Category</h4>
+                  <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
+                    {filterOptions.diseaseCategories.map(category => (
+                      <label
+                        key={category}
+                        className="flex items-center gap-2 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={activeFilters.diseaseCategory.includes(category)}
+                          onChange={() => toggleFilter('diseaseCategory', category)}
+                          className="w-4 h-4 rounded border-gray-600 bg-dark-600 text-herb-500 focus:ring-herb-500 focus:ring-offset-0"
+                        />
+                        <span className="text-gray-300 group-hover:text-white transition-colors text-sm">
+                          {category}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Region Filter */}
+                <div>
+                  <h4 className="text-herb-400 font-medium mb-3">Region</h4>
+                  <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
+                    {filterOptions.regions.map(region => (
+                      <label
+                        key={region}
+                        className="flex items-center gap-2 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={activeFilters.region.includes(region)}
+                          onChange={() => toggleFilter('region', region)}
+                          className="w-4 h-4 rounded border-gray-600 bg-dark-600 text-herb-500 focus:ring-herb-500 focus:ring-offset-0"
+                        />
+                        <span className="text-gray-300 group-hover:text-white transition-colors text-sm">
+                          {region}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Part Used Filter */}
+                <div>
+                  <h4 className="text-herb-400 font-medium mb-3">Part Used</h4>
+                  <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
+                    {filterOptions.partsUsed.map(part => (
+                      <label
+                        key={part}
+                        className="flex items-center gap-2 cursor-pointer group"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={activeFilters.partUsed.includes(part)}
+                          onChange={() => toggleFilter('partUsed', part)}
+                          className="w-4 h-4 rounded border-gray-600 bg-dark-600 text-herb-500 focus:ring-herb-500 focus:ring-offset-0"
+                        />
+                        <span className="text-gray-300 group-hover:text-white transition-colors text-sm">
+                          {part}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* RESULTS */}
         <p className="text-gray-400 mb-6">
           Showing <span className="text-herb-400">{currentPlants.length}</span> of{' '}
