@@ -11,6 +11,8 @@ import mediaRoutes from './routes/mediaRoutes.js';
 import generateRoutes from './routes/generateRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
+import ayurvedaRoutes from './routes/ayurvedaRoutes.js';
+import ayushRoutes from './routes/ayushRoutes.js';
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -48,6 +50,8 @@ app.use('/api/media', mediaRoutes);
 app.use('/api/generate', generateRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/chat', chatRoutes);
+app.use('/api/ayurveda', ayurvedaRoutes);
+app.use('/api/ayush', ayushRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

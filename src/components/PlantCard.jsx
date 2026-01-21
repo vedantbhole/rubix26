@@ -16,7 +16,7 @@ import PlantModelModal from './PlantModelModal';
 
 const PlantModelPreview = lazy(() => import('./PlantModelPreview'));
 
-const plantModels = {
+export const plantModels = {
   1: '/models/tulsi.glb',
   2: '/models/ashwagandha.glb',
   3: '/models/neem.glb',

@@ -3,16 +3,22 @@ import Plant from '../models/Plant.js';
 
 const router = express.Router();
 
-// GET all plants
-// Supports query params: search, ayush_system, disease_category, etc.
+// GET all plants with pagination
+// Supports query params: search, ayush_system, disease_category, page, limit, etc.
 router.get('/', async (req, res) => {
   try {
-    const { search, ayush_system, disease_category, region, sort } = req.query;
+    const { search, ayush_system, disease_category, region, sort, page = 1, limit = 12 } = req.query;
     let query = {};
 
     // Search logic
     if (search) {
-      query.$text = { $search: search };
+      query.$or = [
+        { common_name: { $regex: search, $options: 'i' } },
+        { botanical_name: { $regex: search, $options: 'i' } },
+        { name: { $regex: search, $options: 'i' } },
+        { medicinal_properties: { $regex: search, $options: 'i' } },
+        { therapeutic_uses: { $regex: search, $options: 'i' } }
+      ];
     }
 
     // Filters
@@ -26,7 +32,15 @@ router.get('/', async (req, res) => {
       query.region = { $regex: region, $options: 'i' };
     }
 
-    let plantQuery = Plant.find(query);
+    // Get total count for pagination
+    const total = await Plant.countDocuments(query);
+
+    // Pagination
+    const pageNum = parseInt(page);
+    const limitNum = parseInt(limit);
+    const skip = (pageNum - 1) * limitNum;
+
+    let plantQuery = Plant.find(query).skip(skip).limit(limitNum);
 
     // Sort logic
     if (sort) {
@@ -37,9 +51,13 @@ router.get('/', async (req, res) => {
     }
 
     const plants = await plantQuery;
+
     res.status(200).json({
       success: true,
       count: plants.length,
+      total,
+      page: pageNum,
+      totalPages: Math.ceil(total / limitNum),
       data: plants
     });
   } catch (error) {

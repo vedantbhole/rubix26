@@ -12,6 +12,8 @@ import {
   ChevronsRight
 } from 'lucide-react';
 import PlantCard from '../components/PlantCard';
+import { plants } from '../data/plants';
+
 const ITEMS_PER_PAGE = 6;
 
 // Utility: extract unique values safely
@@ -33,7 +35,7 @@ export default function PlantExplorer() {
   const [viewMode, setViewMode] = useState('grid');
   const [showFilters, setShowFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   const [activeFilters, setActiveFilters] = useState({
     ayushSystem: [],
     diseaseCategory: [],
@@ -41,50 +43,27 @@ export default function PlantExplorer() {
     partUsed: []
   });
 
-  // Fetch plants from API
-  const [plants, setPlants] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchPlants = async () => {
-      try {
-        const response = await fetch('http://localhost:5001/api/plants');
-        const data = await response.json();
-        if (data.success) {
-          setPlants(data.data);
-        }
-      } catch (error) {
-        console.error('Failed to fetch plants:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPlants();
-  }, []);
-
   // Build filter options directly from real data
   const filterOptions = useMemo(() => ({
     ayushSystems: getUniqueValues(plants, 'ayush_system'),
     diseaseCategories: getUniqueValues(plants, 'disease_category'),
     regions: getUniqueValues(plants, 'region'),
     partsUsed: getUniqueValues(plants, 'part_used')
-  }), [plants]);
+  }), []);
 
-
-  // Main filtering logic (Moved inside useMemo dependency on 'plants')
+  // Main filtering logic
   const filteredPlants = useMemo(() => {
-    if (!plants.length) return [];
-    
     const q = searchQuery.toLowerCase();
 
     return plants.filter(plant => {
-      // Safely access properties
-      const name = plant.common_name?.toLowerCase() || plant.name?.toLowerCase() || '';
-      const botanical = plant.botanical_name?.toLowerCase() || plant.scientificName?.toLowerCase() || '';
+      const name =
+        plant.common_name?.toLowerCase() || '';
+      const botanical =
+        plant.botanical_name?.toLowerCase() || '';
 
       const ayush = Array.isArray(plant.ayush_system)
         ? plant.ayush_system
-        : (plant.ayush_system ? [plant.ayush_system] : []);
+        : [plant.ayush_system];
 
       const diseaseCategories = Array.isArray(plant.disease_category)
         ? plant.disease_category
@@ -92,7 +71,7 @@ export default function PlantExplorer() {
 
       const partUsed = Array.isArray(plant.part_used)
         ? plant.part_used
-        : (plant.part_used ? [plant.part_used] : []);
+        : [plant.part_used];
 
       const medicinalProps = plant.medicinal_properties || [];
       const therapeuticUses = plant.therapeutic_uses || [];
@@ -119,6 +98,7 @@ export default function PlantExplorer() {
           activeFilters.diseaseCategory.includes(d)
         );
 
+      // IMPORTANT FIX: substring match for region
       const regionMatch =
         activeFilters.region.length === 0 ||
         activeFilters.region.some(r =>
@@ -137,7 +117,7 @@ export default function PlantExplorer() {
         partMatch
       );
     });
-  }, [searchQuery, activeFilters, plants]);
+  }, [searchQuery, activeFilters]);
 
   // ---------- PAGINATION ----------
   const totalPages = Math.ceil(filteredPlants.length / ITEMS_PER_PAGE);
@@ -146,6 +126,7 @@ export default function PlantExplorer() {
     if (currentPage > totalPages && totalPages > 0) {
       setCurrentPage(1);
     }
+    console.log(currentPlants)
   }, [totalPages, currentPage]);
 
   const currentPlants = useMemo(() => {
@@ -209,6 +190,9 @@ export default function PlantExplorer() {
           <h1 className="font-display font-bold text-4xl lg:text-5xl text-white mb-4">
             Plant <span className="text-gradient">Explorer</span>
           </h1>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Explore {plants.length} medicinal plants across AYUSH systems.
+          </p>
         </motion.div>
 
         {/* Search + Controls */}
@@ -267,7 +251,7 @@ export default function PlantExplorer() {
               ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
               : 'flex flex-col gap-4'}
             >
-            
+
               {currentPlants.map((plant, index) => (
                 <PlantCard key={plant.common_name + index} plant={plant} index={index} />
               ))}
@@ -281,7 +265,7 @@ export default function PlantExplorer() {
 
                 {getVisiblePages().map((p, i) =>
                   p === '...'
-                    ? <span key={'ellipsis-' + i}>…</span>
+                    ? <span key={i}>…</span>
                     : (
                       <button
                         key={p}
