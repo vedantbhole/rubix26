@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Bookmark, BookmarkX, Trash2, Plus, Edit3, Check, X,
-  FolderPlus, ChevronRight, Leaf, FileText, Download
+  FolderPlus, ChevronRight, Leaf, FileText, Download, StickyNote, Save
 } from 'lucide-react';
 import { plants as staticPlants } from '../data/plants'; // Retain for fallback or structure
 import { useBookmarks } from '../hooks/useBookmarks';
@@ -23,31 +23,36 @@ export default function Bookmarks() {
     addToStudyList,
     removeFromStudyList,
     deleteStudyList,
-    getNote
+    getNote,
+    addStudyListNote,
+    getStudyListNote
   } = useBookmarks();
 
   const [activeTab, setActiveTab] = useState('bookmarks');
   const [showNewListModal, setShowNewListModal] = useState(false);
   const [newListName, setNewListName] = useState('');
   const [selectedListId, setSelectedListId] = useState(null);
+  const [showNotesModal, setShowNotesModal] = useState(false);
+  const [editingNote, setEditingNote] = useState('');
+  const [editingListId, setEditingListId] = useState(null);
 
   // Refresh user data (bookmarks) when entering the page
   useEffect(() => {
     const refreshBookmarks = async () => {
-       try {
-         // Using AuthInitializer logic or re-dispatching login if we had a checkAuth action
-         // Since we don't have a checkAuth thunk, we can trigger a manual fetch or rely on AuthInitializer
-         // But AuthInitializer only runs on App mount.
-         // Let's implement a simple fetch here to update the store if needed, 
-         // OR better, we can trust the store and simple add a manual refresh button if they want.
-         
-         // Actually, let's just do a silent verify to ensure bookmarks are up to date
-         // The user might have bookmarked something on another device? Unlikely for now.
-         // But the user issue is "fetching all bookmarks".
-         // The bookmarks are IN the user object.
-       } catch (e) {
-         console.error(e);
-       }
+      try {
+        // Using AuthInitializer logic or re-dispatching login if we had a checkAuth action
+        // Since we don't have a checkAuth thunk, we can trigger a manual fetch or rely on AuthInitializer
+        // But AuthInitializer only runs on App mount.
+        // Let's implement a simple fetch here to update the store if needed, 
+        // OR better, we can trust the store and simple add a manual refresh button if they want.
+
+        // Actually, let's just do a silent verify to ensure bookmarks are up to date
+        // The user might have bookmarked something on another device? Unlikely for now.
+        // But the user issue is "fetching all bookmarks".
+        // The bookmarks are IN the user object.
+      } catch (e) {
+        console.error(e);
+      }
     };
     refreshBookmarks();
   }, []);
@@ -58,9 +63,9 @@ export default function Bookmarks() {
   // Ensure plants and bookmarks are arrays
   const safePlants = Array.isArray(plants) ? plants : [];
   const safeBookmarks = Array.isArray(bookmarks) ? bookmarks : [];
-  
-  const bookmarkedPlants = safePlants.filter(p => 
-    safeBookmarks.map(String).includes(String(p.id)) || 
+
+  const bookmarkedPlants = safePlants.filter(p =>
+    safeBookmarks.map(String).includes(String(p.id)) ||
     (p.jsonId && safeBookmarks.map(String).includes(String(p.jsonId)))
   );
 
@@ -69,6 +74,21 @@ export default function Bookmarks() {
       createStudyList(newListName.trim());
       setNewListName('');
       setShowNewListModal(false);
+    }
+  };
+
+  const handleOpenNotesModal = (listId) => {
+    setEditingListId(listId);
+    setEditingNote(getStudyListNote(listId));
+    setShowNotesModal(true);
+  };
+
+  const handleSaveNote = () => {
+    if (editingListId) {
+      addStudyListNote(editingListId, editingNote);
+      setShowNotesModal(false);
+      setEditingListId(null);
+      setEditingNote('');
     }
   };
 
@@ -320,8 +340,32 @@ export default function Bookmarks() {
               </button>
 
               <div className="glass-card p-6 mb-8">
-                <h2 className="font-display font-bold text-2xl text-white mb-2">{selectedList.name}</h2>
-                <p className="text-gray-500">{selectedListPlants.length} plants in this list</p>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h2 className="font-display font-bold text-2xl text-white mb-2">{selectedList.name}</h2>
+                    <p className="text-gray-500">{selectedListPlants.length} plants in this list</p>
+                  </div>
+                  <button
+                    onClick={() => handleOpenNotesModal(selectedList.id)}
+                    className="p-2 rounded-lg text-gray-400 hover:text-herb-400 hover:bg-herb-500/10 transition-colors flex items-center gap-2"
+                  >
+                    <StickyNote className="w-5 h-5" />
+                    <span className="text-sm">{getStudyListNote(selectedList.id) ? 'Edit Notes' : 'Add Notes'}</span>
+                  </button>
+                </div>
+
+                {/* Notes Preview */}
+                {getStudyListNote(selectedList.id) && (
+                  <div className="mt-4 p-4 bg-dark-600/50 rounded-xl border border-herb-500/20">
+                    <div className="flex items-center gap-2 mb-2">
+                      <StickyNote className="w-4 h-4 text-herb-400" />
+                      <span className="text-sm font-medium text-herb-400">Your Notes</span>
+                    </div>
+                    <p className="text-gray-300 text-sm whitespace-pre-wrap">
+                      {getStudyListNote(selectedList.id)}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Add from Bookmarks */}
@@ -429,6 +473,71 @@ export default function Bookmarks() {
                   >
                     Create List
                   </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Notes Modal */}
+        <AnimatePresence>
+          {showNotesModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-900/80 backdrop-blur-sm"
+              onClick={() => setShowNotesModal(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="glass-card p-8 max-w-2xl w-full"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 rounded-lg bg-herb-500/20">
+                    <StickyNote className="w-6 h-6 text-herb-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-2xl text-white">Study Notes</h3>
+                    <p className="text-gray-500 text-sm">Add personalized notes for this study list</p>
+                  </div>
+                </div>
+
+                <textarea
+                  placeholder="Write your study notes here... 
+
+• Key concepts to remember
+• Important connections between plants
+• Personal observations and insights
+• Study goals and progress"
+                  value={editingNote}
+                  onChange={(e) => setEditingNote(e.target.value)}
+                  className="w-full h-64 px-4 py-3 bg-dark-600 border border-herb-500/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-herb-500/50 mb-6 resize-none"
+                  autoFocus
+                />
+
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-500 text-sm">
+                    {editingNote.length} characters
+                  </span>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => setShowNotesModal(false)}
+                      className="px-4 py-2 text-gray-400 hover:text-white transition-colors"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={handleSaveNote}
+                      className="btn-primary flex items-center gap-2"
+                    >
+                      <Save className="w-4 h-4" />
+                      Save Notes
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>

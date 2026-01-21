@@ -25,6 +25,11 @@ export function BookmarksProvider({ children }) {
     return saved ? JSON.parse(saved) : [];
   });
 
+  const [studyListNotes, setStudyListNotes] = useState(() => {
+    const saved = localStorage.getItem('herbalGarden_studyListNotes');
+    return saved ? JSON.parse(saved) : {};
+  });
+
   // Get active bookmarks based on auth state
   const bookmarks = isAuthenticated && user?.bookmarkedPlants
     ? user.bookmarkedPlants
@@ -44,6 +49,10 @@ export function BookmarksProvider({ children }) {
   useEffect(() => {
     localStorage.setItem('herbalGarden_studyLists', JSON.stringify(studyLists));
   }, [studyLists]);
+
+  useEffect(() => {
+    localStorage.setItem('herbalGarden_studyListNotes', JSON.stringify(studyListNotes));
+  }, [studyListNotes]);
 
   // Sync local bookmarks to backend when user logs in
   useEffect(() => {
@@ -177,7 +186,22 @@ export function BookmarksProvider({ children }) {
 
   const deleteStudyList = (listId) => {
     setStudyLists(prev => prev.filter(list => list.id !== listId));
+    // Also remove any notes for this study list
+    setStudyListNotes(prev => {
+      const updated = { ...prev };
+      delete updated[listId];
+      return updated;
+    });
   };
+
+  const addStudyListNote = (listId, note) => {
+    setStudyListNotes(prev => ({
+      ...prev,
+      [listId]: note
+    }));
+  };
+
+  const getStudyListNote = (listId) => studyListNotes[listId] || '';
 
   return (
     <BookmarksContext.Provider value={{
@@ -191,6 +215,8 @@ export function BookmarksProvider({ children }) {
       createStudyList,
       addToStudyList,
       removeFromStudyList,
+      addStudyListNote,
+      getStudyListNote,
       deleteStudyList
     }}>
       {children}
